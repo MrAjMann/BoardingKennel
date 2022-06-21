@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from 'next/image';
 import dog from "./assets/doga.jpg";
 import styledHero from "./Hero.module.css";
 const HeroSection = () => {
