@@ -1,19 +1,21 @@
-import Icon1 from './assets/Icon1.svg'
-import Icon2 from './assets/Icon2.svg'
+import Icon1 from './assets/dog.jpg'
+import Icon2 from './assets/cat.jpg'
 
 
 export const cardData = [
     {
         id: 'cardOne',
         imgSrc: Icon1,
-        cardTitle: 'Breeding',
-        cardDesc: 'We offer assistance with breeding your animals, or we can do it for you.'
+        alt: 'User Profile pic',
+        cardTitle: 'Awesome Dog Person',
+        cardDesc: 'Amazing service from the team, looked after my baby so well he didnt want to come home - recommended to everyone ❤'
     },
     {
         id: 'cardTwo',
         imgSrc: Icon2,
-        cardTitle: 'Pet Washing',
-        cardDesc: 'Our pets need to be pamperd to, we offer a range of services to get your pet looking and smelling thier best.'
+        alt: 'User Profile pic',
+        cardTitle: 'Awesome Dog Person',
+        cardDesc: 'Amazing service from the team, looked after my baby so well he didnt want to come home - recommended to everyone ❤'
     },
 
 ]

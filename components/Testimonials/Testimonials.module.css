@@ -1,0 +1,25 @@
+.testimonialsContainer{
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.testimonialsWrapper{
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr 1fr 1fr; */
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    grid-gap: 16px;
+    padding: 0 50px;
+}
+.testimonialsTitle{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 600;
+    font-family: "Slabo 13px", serif;
+    color: #8e5aaa;
+    margin-bottom: 64px;
+}

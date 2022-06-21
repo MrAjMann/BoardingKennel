@@ -1,6 +1,7 @@
 import Head from "next/head";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Services from "../components/Services/Services";
+import Testimonials from "../components/Testimonials/Testimonials";
 // import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <main className="">
         <HeroSection />
         <Services />
+        <Testimonials />
         {/* <h1>Accomodation for all your pets</h1> */}
       </main>
     </div>
