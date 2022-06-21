@@ -1,9 +1,9 @@
 
     .nav{
-        position: fixed;
+        position: static;
         background: var(--purple);
         width:100%;
-        z-index: 999999;
+        z-index: 999999 !important;
         height:60px;
         display: flex;
         align-items: center;
