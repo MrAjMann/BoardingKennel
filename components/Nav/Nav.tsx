@@ -11,6 +11,13 @@ const Nav = () => {
       <div className={styledNav.mobNavBars}>
         <FaBars />
       </div>
+      
+        <ul className={styledNav.menuItems}>
+          <li className={styledNav.menuItem}><Link href='/services'>Services</Link></li>
+          <li className={styledNav.menuItem}><Link href='/signup'>Sign up</Link></li>
+          <li className={styledNav.menuItem}><Link href='/login'>Login</Link></li>
+        </ul>
+      
     </nav>
   );
 };

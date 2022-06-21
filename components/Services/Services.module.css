@@ -1,0 +1,42 @@
+.sectionContainer{
+    margin-top: 5rem;
+    z-index: 999;
+    position: relative;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple) ;
+}
+.servicesTitle{
+    font-size: 3.5rem;
+    line-height: 1.1;
+    font-weight: 400;
+    font-family: "Slabo 13px", serif;
+    color: var(--white);
+    letter-spacing: 2px;
+    margin-bottom: 64px;
+}
+.servicesWrapper{
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    align-items: center;
+    grid-gap: 16px;
+    padding: 0 50px;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width:768px) {
+
+    .servicesWrapper{
+        max-width: 1300px;
+        
+
+
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+

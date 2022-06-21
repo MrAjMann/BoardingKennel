@@ -38,6 +38,7 @@ width:100%;
 }
 
 .btnWrapper{
+    margin: 2rem 0;
     z-index: 1;
     width: 100%;
     height: 50px;
@@ -64,7 +65,7 @@ width:100%;
 
 @media screen and (min-width:768px) {
     .container{
-        overflow-y: hidden;
+        /* overflow-y: hidden; */
         /* margin-top: 3rem; */
         padding: 10px;
         width: 100%;
@@ -138,12 +139,12 @@ width:100%;
         display: block;
         height: 100%;
         width: 50%;
-
     }
-
+    
     .imgSection{
         margin-top: -5rem;
-        z-index: 1;
+        
+        z-index: -999;
         width: 100%;
         height: 360px;
     }
