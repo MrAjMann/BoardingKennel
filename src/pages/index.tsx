@@ -6,7 +6,7 @@ import Testimonials from "../components/Testimonials/Testimonials";
 // import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const {data, isLoading} = trpc.useQuery(["hello"])
+  const {data, isLoading} = trpc.useQuery(["getAllUsers"])
 
   if (isLoading || !data) return <div>Loading...</div>
 

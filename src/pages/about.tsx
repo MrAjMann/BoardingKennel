@@ -1,8 +1,6 @@
 import Head from "next/head";
 import React from "react";
 
-import {prisma} from '../db/client'
-
 
 const about = (props: any) => {
   return (
@@ -21,10 +19,3 @@ const about = (props: any) => {
 export default about;
 
 
-export const getServerSideProps = async () => {
-  const users = await prisma.user.findMany();
-  return { 
-   props: {
-   users: JSON.stringify(users[0]?.firstName),
-  }}
- }

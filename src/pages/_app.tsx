@@ -2,7 +2,7 @@ import Layout from "../components/Layout";
 import { AppType } from "next/dist/shared/lib/utils";
 import { withTRPC } from '@trpc/next';
 import { AppRouter } from './api/trpc/[trpc]';
-
+import superjson from 'superjson';
 import "../styles/globals.css";
 
 
@@ -26,6 +26,7 @@ export default withTRPC<AppRouter>({
 
     return {
       url,
+      transformer: superjson
       /**
        * @link https://react-query.tanstack.com/reference/QueryClient
        */

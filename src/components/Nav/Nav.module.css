@@ -1,6 +1,6 @@
 
     .nav{
-        position: static;
+        position: fixed;
         background: var(--purple);
         width:100%;
         z-index: 999999 !important;
@@ -74,6 +74,18 @@
 
         }
         .menuItem a{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--white);
+            font-size: 1.2rem;
+            height: 100%;
+            margin-left: 2rem;
+            font-family: "Montserrat", sans-serif;
+            font-weight: 400;
+            padding: 0 0.8rem;
+        }
+        .menuItem p{
             display: flex;
             justify-content: center;
             align-items: center;
