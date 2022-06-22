@@ -7,7 +7,7 @@ import styledNav from "./Nav.module.css";
 
 
 const Nav = (props: any) => {
-  const {data, isLoading} = trpc.useQuery(["getAllUsers"])
+  const {data, isLoading} = trpc.useQuery(["users.getUser"])
 
   if (isLoading || !data) return <div>Loading...</div>
   console.log(data)
