@@ -1,7 +1,10 @@
 import Head from "next/head";
 import React from "react";
 
-const about = () => {
+import {prisma} from '../db/client'
+
+
+const about = (props: any) => {
   return (
     <div>
       <Head>
@@ -10,8 +13,18 @@ const about = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <h1>About</h1>
+      <li>{props.users}</li>
     </div>
   );
 };
 
 export default about;
+
+
+export const getServerSideProps = async () => {
+  const users = await prisma.user.findMany();
+  return { 
+   props: {
+   users: JSON.stringify(users[0]?.firstName),
+  }}
+ }

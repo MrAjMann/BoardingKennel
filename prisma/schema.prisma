@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["referentialIntegrity"]
+}
+
+datasource db {
+  provider             = "mysql"
+  url                  = env("DATABASE_URL")
+  referentialIntegrity = "prisma"
+}
+
+model User {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  email      String   @unique
+  firstName  String
+  lastName   String?
+  profileImg String?
+  isAdmin    String   @default("false")
+  pets       Pets[]
+}
+
+model Pets {
+  id               Int      @id @default(autoincrement())
+  createdAt        DateTime @default(now())
+  User             User?    @relation(fields: [userId], references: [id])
+  userId           Int?
+  petName          String?
+  petAge           Int?
+  petGender        String?
+  petDesexedStatus String?
+}
