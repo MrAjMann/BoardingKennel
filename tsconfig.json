@@ -11,19 +11,22 @@
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
-    "incremental": true,
     "esModuleInterop": true,
     "module": "esnext",
     "resolveJsonModule": true,
     "moduleResolution": "node",
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+
+    // Adjustments
+    "incremental": false,
+    "noUncheckedIndexedAccess": true,
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "pages/about.js"  ],
+, "src/pages/about.tsx"  ],
   "exclude": [
     "node_modules"
   ]
