@@ -3,10 +3,11 @@ import { trpc } from "../utils/trpc";
 import HeroSection from "../components/HeroSection/HeroSection";
 import Services from "../components/Services/Services";
 import Testimonials from "../components/Testimonials/Testimonials";
+
 // import styles from "../styles/Home.module.css";
 
 export default function Home() {
-  const {data, isLoading} = trpc.useQuery(["getAllUsers"])
+  const {data, isLoading} = trpc.useQuery(["users.getUser"])
 
   if (isLoading || !data) return <div>Loading...</div>
 

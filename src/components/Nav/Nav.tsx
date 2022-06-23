@@ -7,10 +7,10 @@ import styledNav from "./Nav.module.css";
 
 
 const Nav = (props: any) => {
-  const {data, isLoading} = trpc.useQuery(["users.getUser"])
+  // const {data, isLoading} = trpc.useQuery(["users.getUser"])
 
-  if (isLoading || !data) return <div>Loading...</div>
-  console.log(data)
+  // if (isLoading || !data) return <div>Loading...</div>
+  // console.log(data)
   return (
     <nav className={styledNav.nav}>
       <div className={styledNav.logo}>
@@ -27,7 +27,7 @@ const Nav = (props: any) => {
           {/* Hide if logged in as user */}
           <li className={styledNav.menuItem}><Link href='/login'>Login</Link></li>
           {/* Hide if not logged in as user */}
-          <li className={styledNav.menuItem}><p>{data[0]?.firstName}</p></li>
+          {/* <li className={styledNav.menuItem}><p>{data[0]?.firstName}</p></li> */}
         </ul>
       
     </nav>
