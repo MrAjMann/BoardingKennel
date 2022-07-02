@@ -6,6 +6,7 @@ export const userRouter = trpc
   .router()
   .query("getUser", {
     async resolve() {
-      return await prisma.user.findMany();
+      return await prisma.user?.findMany();
     },
   })
+  // console.log(prisma.pets);

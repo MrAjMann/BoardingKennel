@@ -1,0 +1,44 @@
+@media screen and (max-width: 1200px) {
+    .SidebarBorder{
+        position: fixed;
+        top: 20%;
+        left:200px;
+        height: 600px;
+        width:3px;
+        background-color: var(--purple);
+    }
+}
+
+.SidebarContainer{
+position:sticky;
+top:10%;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-top: 5rem;
+max-width: 300px;
+height: 800px;
+
+}
+
+.profileImageWrapper{
+
+    min-width:130px; 
+    min-height:130px;
+    width:130px; 
+    height:130px;
+    margin: 1.5rem 0rem;
+}
+.profileImage{
+    border-radius: 50%;
+}
+
+
+.SidebarBorder{
+    position: fixed;
+    top: 20%;
+    left:300px;
+    height: 600px;
+    width:3px;
+    background-color: var(--purple);
+}

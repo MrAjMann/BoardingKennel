@@ -3,11 +3,13 @@
         position: fixed;
         background: var(--purple);
         width:100%;
+        top:0;
         z-index: 999999 !important;
         height:60px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
     }
     .logo{
         display: flex;

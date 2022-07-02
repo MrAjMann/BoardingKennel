@@ -1,5 +1,5 @@
 import styledTestimonial from './Testimonials.module.css'
-import Card from '../utilityComponents/TestimonialsCard/Card'
+import Card from '../../utilityComponents/TestimonialsCard/Card'
 
 
 const Testimonials = () => {

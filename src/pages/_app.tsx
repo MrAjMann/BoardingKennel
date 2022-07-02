@@ -1,20 +1,27 @@
 import Layout from "../components/Layout";
-import { AppType } from "next/dist/shared/lib/utils";
+import { SessionProvider } from "next-auth/react";
+import type { AppProps } from "next/app"
+import Nav from "../components/Nav/Nav";
 import { withTRPC } from '@trpc/next';
-import { AppRouter } from '../backend/router';
+import { appRouter } from '../backend/router';
+
 import superjson from 'superjson';
 import "../styles/globals.css";
 
 
-const MyApp: AppType = ({ Component, pageProps }) => {
+const MyApp = ({ Component, pageProps }) =>  {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <SessionProvider session={pageProps.session}>
+      <Nav />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </SessionProvider>
   );
 }
 
-export default withTRPC<AppRouter>({
+
+export default withTRPC<typeof appRouter>({
   config({ ctx }) {
     /**
      * If you want to use SSR, you need to use the server's full URL
@@ -23,6 +30,7 @@ export default withTRPC<AppRouter>({
     const url = process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}/api/trpc`
       : 'http://localhost:3000/api/trpc';
+
 
     return {
       url,

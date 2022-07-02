@@ -1,0 +1,36 @@
+.MenuButtonWrapper{
+    position: fixed;
+    z-index: 99999999;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0rem auto;
+}
+
+.MenuButton{
+    display: flex;
+    justify-content: center;
+    /* padding: 5px; */
+    align-items: center;
+    margin: 0.5rem 0.5rem;
+    border-radius: 5px;
+    min-width: 100px;
+    height:50px;
+    border: 1px solid var(--pink);
+    cursor: pointer;
+    background: var(--white);
+
+}
+
+.MenuIcon{
+    color: var(--blue)
+}
+
+
+@media screen and (min-width: 960px) {
+    .MenuButtonWrapper{
+        display: none;
+    }
+}

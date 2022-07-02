@@ -1,0 +1,54 @@
+.loginContainer {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginTitle {
+  margin: 1rem auto;
+  color: var(--black);
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginInput {
+  text-align: center;
+  margin: 1rem auto;
+  border: 0px;
+  border-bottom: 0.1px solid var(--black);
+  padding: 0 15px;
+  width: 250px;
+  height: 40px;
+  outline-color: var(--pink);
+}
+
+.authButton {
+    border: none;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple);
+    color: var(--white);
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    width: 250px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    height: 50px;
+    cursor:pointer;
+    transition: all 1s ease-in-out;
+}
+
+.authButton:hover{
+    transition: all 1s ease-in-out;
+    border-radius: 15px;
+    background: var(--pink);
+}

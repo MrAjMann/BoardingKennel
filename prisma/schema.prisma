@@ -13,23 +13,27 @@ datasource db {
 }
 
 model User {
-  id         Int      @id @default(autoincrement())
-  createdAt  DateTime @default(now())
-  email      String   @unique
-  firstName  String
-  lastName   String?
-  profileImg String?
-  isAdmin    String   @default("false")
-  pets       Pets[]
+  id            Int       @id @default(autoincrement())
+  username      String    @unique @default("john smith")
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  isAdmin       String    @default("false")
+  pets          Pets[]
+
+  @@unique([id, email])
 }
 
 model Pets {
   id               Int      @id @default(autoincrement())
   createdAt        DateTime @default(now())
-  User             User?    @relation(fields: [userId], references: [id])
-  userId           Int?
+  owner            User     @relation(fields: [userEmail], references: [email])
+  userEmail        String
   petName          String?
   petAge           Int?
   petGender        String?
   petDesexedStatus String?
+
+  @@unique([id])
 }

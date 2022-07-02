@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import Nav from "./Nav/Nav";
+
 import styles from "../styles/Layout.module.css";
 import Footer from "./Footer/Footer";
 
@@ -11,11 +11,11 @@ interface Props {
 const Layout: React.FC<Props> = ({ children })=> {
   return (
     <>
-      <Nav />
+    
       <div className={styles.container}>
         <main className={styles.main} >{children}</main>
-      <Footer />
       </div>
+      {/* <Footer /> */}
     </>
   );
 };

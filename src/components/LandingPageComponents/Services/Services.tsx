@@ -1,5 +1,5 @@
 import styledServices from "./Services.module.css";
-import Card from "../utilityComponents/ServicesCard/Card";
+import Card from "../../utilityComponents/ServicesCard/Card";
 const Services = () => {
   return (
     <section className={styledServices.sectionContainer}>

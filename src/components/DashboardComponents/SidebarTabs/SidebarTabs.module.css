@@ -1,0 +1,35 @@
+.TabWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    margin: 1rem 1.4rem;
+
+    width: 250px;
+    box-shadow: 1px 2px 1px rgba(99, 99, 99, 0.8);
+    border-radius: 5px;
+    background-color: var(--purple);
+    cursor: pointer;
+    transition: all 1s ease-in-out;
+}
+
+.TabWrapper:active{
+    cursor: pointer;
+    box-shadow: 1px 2px 1px rgba(99, 99, 99, 0.3);
+    background-color: var(--pink);
+}
+.TabWrapper:hover{
+    box-shadow: 1px 2px 1px rgba(99, 99, 99, 0.3);
+    background-color: var(--pink);
+}
+.MenuIcon{
+    color: var(--blue);
+    margin: 0rem 1rem;
+}
+
+.TabText{
+    padding-top: 10px;
+    letter-spacing: 1.5px;
+    font-size: 1.3rem;
+    color: var(--white);
+}
