@@ -8,7 +8,7 @@ type Props = {
 
 const Sidebar: React.FC<Props> = (props)=> {
   return (
-    <div className={props.classes}>
+    <>
       <div className={styled.SidebarContainer}>
        
           <div className={styled.profileImageWrapper}>
@@ -24,7 +24,7 @@ const Sidebar: React.FC<Props> = (props)=> {
         
         <div className={styled.SidebarBorder}></div>
       </div>
-    </div>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app"
-import Nav from "../components/Nav/Nav";
+
 import { withTRPC } from '@trpc/next';
 import { appRouter } from '../backend/router';
 
@@ -12,7 +12,6 @@ import "../styles/globals.css";
 const MyApp = ({ Component, pageProps }) =>  {
   return (
     <SessionProvider session={pageProps.session}>
-      <Nav />
       <Layout>
         <Component {...pageProps} />
       </Layout>

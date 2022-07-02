@@ -1,5 +1,4 @@
 .dashboardContainer {
-    
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
@@ -56,12 +55,5 @@
 @media screen and (min-width:960px) {
     .profileImageWrapper{
         display: none;
-    }
-}
-@media screen and (max-width:1206px) {
-    .profileUserWrapper{
-        width: 600px;
-        margin: 2rem auto;
-        padding: 0 10px;
     }
 }
