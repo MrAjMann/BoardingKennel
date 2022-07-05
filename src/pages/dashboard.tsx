@@ -1,4 +1,5 @@
-import DashboardInteface from "../components/DashboardComponents/DashboardInterface/DashboardInterface";
+import DashboardProfileInterface from "../components/DashboardComponents/DashboardProfileInterface/DashboardProfileInterface";
+import DashboardPetInterface from "../components/DashboardComponents/DashboardPetInterface/DashboardPetInterface";
 import Sidebar from "../components/DashboardComponents/Sidebar/Sidebar";
 import styled from "../styles/Dashboard.module.css"
 
@@ -10,8 +11,8 @@ const dashboard = () => {
         <Sidebar   />
         </div>
         
-       
-        <DashboardInteface />
+        {/* <DashboardProfileInterface /> */}
+        <DashboardPetInterface />
 
        
     </div>

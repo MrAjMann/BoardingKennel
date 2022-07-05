@@ -1,0 +1,32 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: #000;  
+}
+.dashboardInnerWrapper{
+    margin-top: 5rem;
+}
+.profileImageWrapper{
+    min-width:130px; 
+    min-height:130px;
+    width:130px; 
+    height:130px;
+    margin-bottom: 1rem;
+}
+.profileImage{
+    border-radius: 50%;
+}
+
+
+.DashboardSpacer{
+    
+    margin: 2rem auto; 
+}
+
+@media screen and (min-width:960px) {
+    .profileImageWrapper{
+        display: none;
+    }
+}

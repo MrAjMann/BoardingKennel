@@ -19,7 +19,34 @@
         grid-template-columns: 0.2fr 1fr;
         /* grid-template-areas: "sidebar content"; */
     }
-
+    .profileUserWrapper{
+        width: 75%;
+        margin: 2rem auto;
+        padding: 0 10px;
+    }
+    
+    .profileDate{
+        margin-bottom: 0.4rem;
+        opacity: 0.7;
+        font-family: var(--secondaryFont);
+        font-weight: 100; 
+    }
+    .profileUserWelcome{
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        letter-spacing: 1.2px;
+        font-size: 1.2rem;
+        
+        font-family: var(--secondaryFont);
+        font-weight: 500;
+    }
+    .profileUserWelcomeName{
+        font-family: var(--secondaryFont);
+        font-weight: 600;
+        font-size: 1.2rem;
+        color:var(--purple)
+        
+    }
   
 
 }
