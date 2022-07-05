@@ -1,6 +1,6 @@
 import styled from "./InfoCard.module.css";
 import { FiEdit } from "react-icons/fi";
-
+import {IoAddCircleOutline} from 'react-icons/io5'
 export const InfoCard = ({ children, title }) => {
   return (
     <div className={styled.infoCardContainer}>
@@ -60,6 +60,8 @@ export const ICAbout = () => {
     </>
   );
 };
+
+
 export const ICEmergencyContact = () => {
   return (
     <>
@@ -91,6 +93,191 @@ export const ICEmergencyContact = () => {
           className={styled.infoCardContentTextArea}
         ></textarea>
       </div>
+    </>
+  );
+};
+
+
+export const ICPetInformation = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Name:</h4>
+
+        <input
+          disabled
+          value="Sandy"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Age: </h4>
+        <input
+          disabled
+          value="3"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Species: </h4>
+        <input
+          disabled
+          value="Dog"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Breed: </h4>
+        <input
+          disabled
+          value="Golden Retrevier"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+      
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Gender: </h4>
+        <input
+          disabled
+          value="Female"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Desexed: </h4>
+        <input
+          disabled
+          value="Yes"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Upto Date Vacinations: </h4>
+        <input
+          disabled
+          value="Yes"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+    </>
+  );
+};
+
+
+
+export const ICVetContactInfo = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Name:</h4>
+
+        <input
+          disabled
+          value="Border Vets"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Phone: </h4>
+        <input
+          disabled
+          value="0822253177"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Address: </h4>
+        <textarea
+          disabled
+          value="12 Something rd, borderPlace, NSW, 3476"
+          className={styled.infoCardContentTextArea}
+        ></textarea>
+      </div>
+    </>
+  );
+};
+
+
+export const ICMedicationInformation = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Medication:</h4>
+
+        <input
+          disabled
+          value="Medication Name"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Dose: </h4>
+        <input
+          disabled
+          value="1 Tablet"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Frequency: </h4>
+        <input
+          disabled
+          value="Twice Daily"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Start Date: </h4>
+        <input
+          disabled
+          value="17 June 2023"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+      
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>End Date: </h4>
+        <input
+          disabled
+          value="25 June 2023"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Other Info: </h4>
+        <textarea
+          disabled
+          value="Sandy likes her medication to be mixed in with her food."
+          className={styled.infoCardContentTextArea}
+        ></textarea>
+      </div>
+        
+
+       <div className={styled.Seperator}></div>
+       
+      <div className={styled.ButtonContainer}>
+      <div className={styled.ButtonWrapper}>
+          <IoAddCircleOutline size="24px" className={styled.ButtonIcon}/>
+        </div>
+      </div>
+
     </>
   );
 };

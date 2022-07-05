@@ -1,72 +1,59 @@
-import Image from "next/future/image";
-import DashboardMobileNav from "../DasboardMobileNav/DashboardMobileNav";
+import Image from "next/image";
+import DashboardMobileNav from '../DasboardMobileNav/DashboardMobileNav'
 import Welcome from "../../utilityComponents/WelcomeInfo";
 
-import {IoAddCircleOutline} from 'react-icons/io5'
-import Sandy from "../assets/Sandy.jpg";
-import Socks from "../assets/Socks.jpg";
-import Luci from "../assets/Luci.jpg";
-import Tinkerbell from "../assets/Tinkerbell.jpg";
+
+import {
+  InfoCard,
+  ICPetInformation,
+  ICVetContactInfo,
+  ICMedicationInformation,
+} from "../InfoCard/InfoCard";
+import profilePic from "../assets/dogOwner.jpg";
+
+
+
 import styled from "./DashboardPetInterface.module.css";
+import { PetGallery } from "../PetGallery/Gallery";
+
 
 const dashboardInteface = () => {
   return (
-    <section className={styled.DashboardContainer}>
-      <div className={styled.TitleWrapper}>
-        <h1 className={styled.Title}>Pets</h1>
+    <section className={styled.dashboardContainer}>
+      <div className={styled.dashboardInnerWrapper}></div>
+      <div className={styled.profileImageWrapper}>
+        <Image
+          className={styled.profileImage}
+          src={profilePic}
+          alt="A dog and it's owner"
+        />
       </div>
-      <Welcome />
-      <div className={styled.DashboardInnerWrapper}>
 
-        <a href="/pets" className={styled.PetImageWrapper} rel="noopener noreferrer">
-          <Image
-            className={styled.PetImage}
-            src={Sandy}
-            alt="A dog and it's owner"
-          />
+    <Welcome />
 
-          <h2 className={styled.PetName}>Sandy</h2>
-        </a>
+    <PetGallery />
 
-        <a href="/pets" className={styled.PetImageWrapper} rel="noopener noreferrer">
-          <Image
-            className={styled.PetImage}
-            src={Socks}
-            alt="A dog and it's owner"
-          />
-          <h2 className={styled.PetName}>Socks</h2>
-        </a>
+      <InfoCard title="Pet Information">
+        <ICPetInformation />
+      </InfoCard>
 
-        <a
-          href="/pets"
-          className={styled.PetImageWrapper}
-          rel="noopener noreferrer"
-        >
-          <Image
-            className={styled.PetImage}
-            src={Luci}
-            alt="A dog and it's owner"
-          />
-          <h2 className={styled.PetName}>Luci</h2>
-        </a>
+      <InfoCard title="Vet Contact Info">
+        <ICVetContactInfo />
+      </InfoCard>
 
-        <a href="/pets" className={styled.PetImageWrapper}>
-          <Image
-            className={styled.PetImage}
-            src={Tinkerbell}
-            alt="A dog and it's owner"
-          />
-          <h2 className={styled.PetName}>Tinkerbell</h2>
-        </a>
-      </div>
-      <div>
-      <div className={styled.ButtonWrapper}>
-        <IoAddCircleOutline size="24px" className={styled.ButtonIcon}/>
 
-      </div>
-      </div>
+      <InfoCard title="Vet Contact Info">
+        <ICMedicationInformation />
+
+
+      </InfoCard>
+
+
+      
+
+
       <div className={styled.DashboardSpacer}></div>
-      <DashboardMobileNav />
+      < DashboardMobileNav />
     </section>
   );
 };
