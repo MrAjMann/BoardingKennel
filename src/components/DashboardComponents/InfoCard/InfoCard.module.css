@@ -78,6 +78,32 @@
     resize: none;
 }
 
+.infoCardContentListContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.infoCardContentListItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+
+
+.infoCardContentCheckbox{
+    margin: 0 1rem;
+    padding: 5px;
+    height: 24px;
+    width:24px;
+}
+
+.infoCardContentLabel{
+    font-size: 1.2rem;
+    font-family: var(--secondaryFont);
+}
+
 .Seperator{
 margin: 1rem auto;
 width: 65%;

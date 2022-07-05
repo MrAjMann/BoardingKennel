@@ -1,6 +1,7 @@
 import styled from "./InfoCard.module.css";
 import { FiEdit } from "react-icons/fi";
-import {IoAddCircleOutline} from 'react-icons/io5'
+import { IoAddCircleOutline } from "react-icons/io5";
+import { type } from "os";
 export const InfoCard = ({ children, title }) => {
   return (
     <div className={styled.infoCardContainer}>
@@ -61,7 +62,6 @@ export const ICAbout = () => {
   );
 };
 
-
 export const ICEmergencyContact = () => {
   return (
     <>
@@ -84,7 +84,6 @@ export const ICEmergencyContact = () => {
         ></input>
       </div>
 
-
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
         <textarea
@@ -96,7 +95,6 @@ export const ICEmergencyContact = () => {
     </>
   );
 };
-
 
 export const ICPetInformation = () => {
   return (
@@ -120,7 +118,6 @@ export const ICPetInformation = () => {
         ></input>
       </div>
 
-
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Species: </h4>
         <input
@@ -138,7 +135,6 @@ export const ICPetInformation = () => {
         ></input>
       </div>
 
-      
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Gender: </h4>
         <input
@@ -147,7 +143,6 @@ export const ICPetInformation = () => {
           className={styled.infoCardContentInput}
         ></input>
       </div>
-
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Desexed: </h4>
@@ -168,8 +163,6 @@ export const ICPetInformation = () => {
     </>
   );
 };
-
-
 
 export const ICVetContactInfo = () => {
   return (
@@ -193,7 +186,6 @@ export const ICVetContactInfo = () => {
         ></input>
       </div>
 
-
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
         <textarea
@@ -205,7 +197,6 @@ export const ICVetContactInfo = () => {
     </>
   );
 };
-
 
 export const ICMedicationInformation = () => {
   return (
@@ -229,7 +220,6 @@ export const ICMedicationInformation = () => {
         ></input>
       </div>
 
-
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Frequency: </h4>
         <input
@@ -238,7 +228,6 @@ export const ICMedicationInformation = () => {
           className={styled.infoCardContentInput}
         ></input>
       </div>
-
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Start Date: </h4>
@@ -249,7 +238,6 @@ export const ICMedicationInformation = () => {
         ></input>
       </div>
 
-      
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>End Date: </h4>
         <input
@@ -259,7 +247,6 @@ export const ICMedicationInformation = () => {
         ></input>
       </div>
 
-
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Other Info: </h4>
         <textarea
@@ -268,16 +255,149 @@ export const ICMedicationInformation = () => {
           className={styled.infoCardContentTextArea}
         ></textarea>
       </div>
-        
 
-       <div className={styled.Seperator}></div>
-       
+      <div className={styled.Seperator}></div>
+
       <div className={styled.ButtonContainer}>
-      <div className={styled.ButtonWrapper}>
-          <IoAddCircleOutline size="24px" className={styled.ButtonIcon}/>
+        <div className={styled.ButtonWrapper}>
+          <IoAddCircleOutline size="24px" className={styled.ButtonIcon} />
         </div>
       </div>
+    </>
+  );
+};
 
+export const ICPets = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Who is Visiting:</h4>
+
+        <ul className={styled.infoCardContentListContainer}>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Pet1"
+              value="Sandy"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
+              Sandy
+            </label>
+            <br></br>
+          </li>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Pet1"
+              value="Sandy"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
+              Luci
+            </label>
+            <br></br>
+          </li>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Pet1"
+              value="Sandy"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
+              Tinkerbell
+            </label>
+            <br></br>
+          </li>
+        </ul>
+      </div>
+    </>
+  );
+};
+
+
+
+
+export const ICStartDate = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>StartDate:</h4>
+
+        <input
+          disabled
+          value="17 June 2023"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+    </>
+  );
+};
+export const ICEndDate = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>StartDate:</h4>
+
+        <input
+          disabled
+          value="25 June 2023"
+          className={styled.infoCardContentInput}
+        ></input>
+      </div>
+
+    </>
+  );
+};
+
+
+export const ICExtraServices = () => {
+  return (
+    <>
+      <div className={styled.infoCardContentWrapper}>
+        <h4 className={styled.infoCardContentTitle}>Extra Services:</h4>
+
+        <ul className={styled.infoCardContentListContainer}>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Service1"
+              value="Nail Clip"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Service1">
+              Nail Clip
+            </label>
+            <br></br>
+          </li>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Service2"
+              value="Wash"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Service2">
+              Wash
+            </label>
+            <br></br>
+          </li>
+          <li className={styled.infoCardContentListItem}>
+            <input
+              type="checkbox"
+              className={styled.infoCardContentCheckbox}
+              name="Service3"
+              value="Flea"
+            />
+            <label className={styled.infoCardContentLabel} htmlFor="Service3">
+              Flea Treatment
+            </label>
+            <br></br>
+          </li>
+        </ul>
+      </div>
     </>
   );
 };

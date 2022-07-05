@@ -1,0 +1,138 @@
+.dashboardContainer {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    color: #000;  
+}
+.dashboardInnerWrapper{
+    margin-top: 5rem;
+}
+.profileImageWrapper{
+    min-width:130px; 
+    min-height:130px;
+    width:130px; 
+    height:130px;
+    margin-bottom: 1rem;
+}
+.profileImage{
+    border-radius: 50%;
+}
+
+.ButtonContainer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    margin: 1rem 0;
+    
+}
+
+.ButtonCancel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 130px;
+    height: 40px;
+    font-size: 1.3rem;
+    color: var(--black);
+    border-radius: 5px;
+    border: solid var(--blue) 0.5px;
+    font-weight: 700;
+    font-family: var(--secondaryFont);
+    box-shadow: 1px 1px 1px rgba(88, 88, 88, 0.8);
+    transition: all 0.3s ease-in-out;
+}
+
+.ButtonCancel:hover{
+    transition: all 0.3s ease-in-out;
+    color: var(--blue);
+
+}
+.ButtonSave{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    width: 130px;
+    height: 40px;
+    font-size: 1.3rem;
+    color: var(--black);
+    border-radius: 5px;
+    background-color: var(--pink);
+    border: none;
+    font-weight: 700;
+    font-family: var(--secondaryFont);
+    transition: all 0.3s ease-in-out;
+    box-shadow: 1px 1px 1px rgba(88, 88, 88, 0.8);
+}
+
+.ButtonSave:hover{
+    box-shadow: 1px 1px 1px rgba(73, 73, 73, 0.8);
+    transition: all 0.3s ease-in-out;
+    color: var(--white);
+}
+.DashboardSpacer{
+    
+    margin: 2rem auto; 
+}
+
+@media screen and (min-width:960px) {
+    .profileImageWrapper{
+        display: none;
+    }
+    .ButtonContainer{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        
+        
+    }
+    
+    .ButtonCancel{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 130px;
+        height: 40px;
+        font-size: 1.3rem;
+        color: var(--black);
+        border-radius: 5px;
+        border: solid var(--blue) 0.5px;
+        font-weight: 700;
+        font-family: var(--secondaryFont);
+        transition: all 0.3s ease-in-out;
+        margin:0 1rem;
+    }
+    
+    .ButtonCancel:hover{
+        transition: all 0.3s ease-in-out;
+        color: var(--blue);
+    
+    }
+    .ButtonSave{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 130px;
+        height: 40px;
+        font-size: 1.3rem;
+        color: var(--black);
+        border-radius: 5px;
+        background-color: var(--pink);
+        border: none;
+        font-weight: 700;
+        font-family: var(--secondaryFont);
+        transition: all 0.3s ease-in-out;
+        margin:0 1rem;
+    }
+    
+    .ButtonSave:hover{
+        transition: all 0.3s ease-in-out;
+        color: var(--white);
+    }
+}
