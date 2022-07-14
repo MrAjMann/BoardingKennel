@@ -30,8 +30,8 @@ export const authOptions: NextAuthOptions = {
             },
             
             async authorize(credentials, _req) {
-                console.log('req', _req)
-                console.log('cred', credentials)
+                // console.log('req', _req)
+                // console.log('cred', credentials)
 
 
                 const user = await prisma?.user?.findFirst({
@@ -44,12 +44,12 @@ export const authOptions: NextAuthOptions = {
                     
                 })
                 
+                console.log('user', user);
                 if (user) {
                     // Any object returned will be saved in `user` property of the JWT
-                    console.log('user', user);
                     
                     return user
-                  } else {
+                } else {
                     // If you return null then an error will be displayed advising the user to check their details.
                     return null
             
@@ -61,17 +61,22 @@ export const authOptions: NextAuthOptions = {
         })
     ],
     callbacks: {
-        async session({ session, token, user }) {
-            // console.log("in session callback,", session, token, user)
+        async session({ session, token, user, ...rest }) {
+            console.log("in session callback,", {session, token, user, rest})
+            
             if (token) {
-              session.id = token.id;
+                session.id = token.id;
             }
+            console.log('sessionID: ', session.id);
             return session
       
           },
-          async jwt({ token, user, account, profile, isNewUser }) {
-            console.log("in jwt user =", user, account, profile, isNewUser)
-            
+          async jwt({ token, user, account, ...rest }) {
+            console.log("in jwt user =", {token, user, account, rest})
+            if (token.sub === user?.id) {
+                console.log('token = id');
+                
+            }
             if (user) {
               token.id = user.id;
             }

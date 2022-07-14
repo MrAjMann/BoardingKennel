@@ -25,7 +25,7 @@ export default function Login() {
   const [password, setPassword] = useState<string>("")
  
 
- console.log( session?.user.firstName);
+ console.log('user session firstname', session?.user.firstName);
  
 
 // console.log('Email', userEmail);
@@ -91,7 +91,8 @@ export default function Login() {
         aria-label="Password"
         />
 
-            <button  onClick={() => signIn("credentials", {redirect: false, email: `${userEmail}`, password: `${password}` })} >
+            <button  onClick={() => signIn("credentials", {redirect: true, email: `${userEmail}`, password: `${password}`}).then(console.log)} >
+              
         Login
        </button>
        
