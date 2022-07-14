@@ -10,11 +10,10 @@ export default function AuthButton() {
     return (
       <div className={styledAuthButton.authWrapper}>
         
-        <p className={styledAuthButton.authInfo} >Signed in as {session?.user.name}</p> 
+        <p className={styledAuthButton.authInfo} >Signed in as {session.user?.name}</p> 
         <button
           className={styledAuthButton.authButton}
           onClick={() => signOut()}
-          type="submit"
           >
           Logout
         </button>

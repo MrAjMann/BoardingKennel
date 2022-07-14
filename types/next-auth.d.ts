@@ -7,11 +7,12 @@ declare module "next-auth" {
   interface Session {
     user: {
       /** The user's name */
-      id: number,
+      id: string,
       name: string,
       image: string,
       email: string,
-      username: string,
+      firstName: string,
+      lastName: string,
       pets: [],
 
     } & DefaultSession["user"]

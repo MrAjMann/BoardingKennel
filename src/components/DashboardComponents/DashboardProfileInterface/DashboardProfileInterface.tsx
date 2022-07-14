@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DashboardMobileNav from '../DasboardMobileNav/DashboardMobileNav'
-import Welcome from "../../utilityComponents/WelcomeInfo";
+import Welcome from "../InfoCard/WelcomeInfo";
 import {
   InfoCard,
   ICPersonalInfo,
@@ -12,6 +12,9 @@ import styled from "./DashboardProfileInterface.module.css";
 
 
 const dashboardInteface = () => {
+
+
+
   return (
     <section className={styled.dashboardContainer}>
       <div className={styled.dashboardInnerWrapper}></div>
@@ -23,9 +26,9 @@ const dashboardInteface = () => {
         />
       </div>
 
-    <Welcome />
+    {/* <Welcome data/> */}
 
-      <InfoCard title="Personal Information">
+      <InfoCard title="Personal Information" >
         <ICPersonalInfo />
       </InfoCard>
 

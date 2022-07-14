@@ -1,5 +1,5 @@
-import DashboardPetInterface from "../../components/DashboardComponents/DashboardPetInterface/DashboardPetInterface";
-import Sidebar from "../../components/DashboardComponents/Sidebar/Sidebar";
+import DashboardPetInterface from "../../../components/DashboardComponents/DashboardPetInterface/DashboardPetInterface";
+import Sidebar from "../../../components/DashboardComponents/Sidebar/Sidebar";
 import styled from "../../styles/Dashboard.module.css"
 
 

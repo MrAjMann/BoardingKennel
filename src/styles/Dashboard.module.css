@@ -7,6 +7,27 @@
         .SidebarWrapper{
             display: none;
         }
+        .profileUserWrapper{
+            width: 90%;
+            
+            margin: 1rem 1rem;
+            padding: 0 10px;
+        }
+        .profileUserWelcome{
+            margin-top: 0.5rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 1.2px;
+            font-size: 1.2rem;
+            font-family: var(--secondaryFont);
+            font-weight: 500;
+        }
+        .profileUserWelcomeName{
+            font-family: var(--secondaryFont);
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            font-size: 1.2rem;
+            color:var(--purple)
+        }
 }
 
 
@@ -31,6 +52,8 @@
         font-family: var(--secondaryFont);
         font-weight: 100; 
     }
+
+
     .profileUserWelcome{
         margin-top: 0.2rem;
         margin-bottom: 0.2rem;
@@ -45,7 +68,6 @@
         font-weight: 600;
         font-size: 1.2rem;
         color:var(--purple)
-        
     }
   
 

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import DashboardMobileNav from '../DasboardMobileNav/DashboardMobileNav'
-import Welcome from "../../utilityComponents/WelcomeInfo";
+import Welcome from "../InfoCard/WelcomeInfo";
 
 
 import {

@@ -9,11 +9,12 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children })=> {
+
   return (
     <>
     <Nav />
       <div className={styles.container}>
-        <main className={styles.main} >{children}</main>
+        <main className={styles.main}>{children}</main>
       </div>
       {/* <Footer /> */}
     </>

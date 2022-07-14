@@ -2,10 +2,13 @@
 
 .infoCardContainer{
     margin: 1rem auto;
-    
-    /* width: 100%; */
-    /* height:auto; */
-    
+}
+
+.infoCardContainer  span{
+    margin: 0rem 2rem ;
+    width: 100px;
+    height:3px;
+    background-color: var(--purple);
 }
 
 .infoCardTitle{
@@ -45,18 +48,30 @@
 }
 
 .infoCardContentTitle{
+    font-weight: 600;
     letter-spacing: 1.2px;
-    font-size: 1rem;
+    font-size: 1.3rem;
     padding:0px 10px;
     width: 30%;
 }
-.infoCardContentInput{
+.infoCardContentDate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-size: 1.3rem;
+    padding:0px 10px;
+    width: 30%;
+}
+
+.infoCardContentText{
     border: none;
     letter-spacing: 1.1px;
     font-size: 1rem;
     padding:0px 10px;
 }
-.infoCardContentTextArea{
+/* .infoCardContentTextArea{
     position: relative;
     border: none;
     letter-spacing: 1.1px;
@@ -64,7 +79,7 @@
     padding:10px 10px;
     min-height: 120px;
     resize: none;
-}
+} */
 .infoCardContentAboutText{
     position: relative;
     border: none;
@@ -75,24 +90,47 @@
     padding:10px 10px;
     min-height: 80px;
     width: 100%;
-    resize: none;
+    
+}
+
+
+.PetImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
 }
 
 .infoCardContentListContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    grid-gap: 1rem 3rem;
 }
 .infoCardContentListItem{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin: 0.5rem 1rem;
 }
 
 
-.infoCardContentCheckbox{
+.infoCardContentListFlexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+}
+.infoCardContentFlexListItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem 0;
+
+}
+
+/* .infoCardContentCheckbox{
     margin: 0 1rem;
     padding: 5px;
     height: 24px;
@@ -102,7 +140,7 @@
 .infoCardContentLabel{
     font-size: 1.2rem;
     font-family: var(--secondaryFont);
-}
+} */
 
 .Seperator{
 margin: 1rem auto;

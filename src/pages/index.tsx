@@ -1,22 +1,22 @@
 import Head from "next/head";
-import { trpc } from "../utils/trpc";
-import { useSession, signIn, signOut, getSession } from "next-auth/react";
+
 import HeroSection from "../components/LandingPageComponents/HeroSection/HeroSection";
 import Services from "../components/LandingPageComponents/Services/Services";
 import Testimonials from "../components/LandingPageComponents/Testimonials/Testimonials";
-export async function getServerSideProps(context) {
-  return {
-    props: {
-      session: await getSession(context),
-    },
-  };
-}
+
+
+
 
 
 import styles from "../styles/Home.module.css";
+import type { NextPage } from "next";
+import { trpc } from "../utils/trpc";
 
-export default function Home() {
-  // const {data, isLoading} = trpc.useQuery(["users.getUser"])
+
+const Home: NextPage = () =>{
+  const {data, isLoading} = trpc.useQuery(['auth.getSession'])
+
+  console.log(data);
   
     return (
       <div>
@@ -28,6 +28,7 @@ export default function Home() {
 
       <main className="">
         <HeroSection />
+      
         <Services />
         <Testimonials />
         {/* <h1>Accomodation for all your pets</h1> */}
@@ -36,4 +37,7 @@ export default function Home() {
   );
 
 }
+
+export default Home;
+
 

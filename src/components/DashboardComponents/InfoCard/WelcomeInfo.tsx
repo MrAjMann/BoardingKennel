@@ -1,8 +1,10 @@
-import styled from '../../styles/Dashboard.module.css'
+import styled from '../../../styles/Dashboard.module.css'
 
 
 
-const Welcome = () => {
+
+export const Welcome = () =>{
+
     return (
         <div className={styled.profileUserWrapper}>
             <p className={styled.profileDate}>30 June 2022</p>

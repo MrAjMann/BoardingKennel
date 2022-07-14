@@ -1,6 +1,6 @@
 import Image from "next/future/image";
 import DashboardMobileNav from "../DasboardMobileNav/DashboardMobileNav";
-import Welcome from "../../utilityComponents/WelcomeInfo";
+import Welcome from "../InfoCard/WelcomeInfo";
 
 import {IoAddCircleOutline} from 'react-icons/io5'
 import Sandy from "../assets/Sandy.jpg";
@@ -63,7 +63,6 @@ const DashboardPetSelectionInterface = () => {
         
       <div className={styled.ButtonWrapper}>
         <IoAddCircleOutline size="24px" className={styled.ButtonIcon}/>
-
       </div>
       </div>
       <div className={styled.DashboardSpacer}></div>

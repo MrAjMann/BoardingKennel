@@ -1,52 +1,89 @@
 import Link from "next/link";
-
+import {useState } from 'react'
 import { trpc } from "../../utils/trpc";
 import { useSession, signIn, signOut } from "next-auth/react";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import styledNav from "./Nav.module.css";
 
 
-const Nav = (props: any) => {
 
-  // const {data, isLoading} = trpc.useQuery(["users.getUser"])
 
-  // if (isLoading || !data) return <div>Loading...</div>
-  // console.log(...data)
- 
+
+
+const Nav = () => {
+const {data: session, status } = useSession()
+
   return (
     <nav className={styledNav.nav}>
       <div className={styledNav.logo}>
         <Link href="/">Boarding Kennels</Link>{" "}
       </div>
-      <div className={styledNav.mobNavBars}>
-        <FaBars />
-      </div>
+          <NavMobileNavMenu  />
         <ul className={styledNav.menuItems}>
-          {/* <li className={styledNav.menuItem}><Link href='/services'>Services</Link></li> */}
+          <li className={styledNav.menuItem}><Link href='/services'>Services</Link></li>
           {/* <li className={styledNav.menuItem}><Link href='/signOut'>Sign up</Link></li> */}
           {/* Hide if logged in as user */}
-          {/* <NavLoginButton /> */}
+          <NavLoginButton />
           {/* Hide if not logged in as user */}
-          {/* <li className={styledNav.menuItem}><p>{data[0]?.username}</p></li> */}
+        
+        <div><p>{session?.user.email}</p></div>
+        
         </ul>
-      
     </nav>
   )
+  
+
 };
 
 export default Nav;
 
 
-//  const NavLoginButton = () => {
-//   const { data: session, status } = useSession()
-//   console.log(status)
-//   if (!session) {
-//     return (
-//       <li className={styledNav.menuItem}><Link href="/api/auth/signin">login</Link></li>
-//   )
-//   } else {
-//     return (
-//       <li className={styledNav.menuItem}><Link href="/api/auth/signout">Logout </Link> </li>
-//       )
-//   }
-//   }
+ const NavLoginButton = () => {
+  const { data: session, status } = useSession()
+ 
+  if (!session) {
+    return (
+
+      <li className={styledNav.menuItem}><Link href="/login">login</Link></li>
+  )
+  } 
+    return (
+      
+      <li className={styledNav.menuItem}><Link href="/api/auth/signout">Logout </Link> </li>
+      
+    ) 
+     
+  
+  }
+
+
+  const NavMobileNavMenu = () => {
+    
+    // const [toggle, isToggled] = useState<boolean>(false)
+  const [open, setNavOpen] = useState<boolean>(false)
+
+
+
+    const toggle = () => {
+      setNavOpen(!open)
+    }
+    // console.log(toggle);
+
+
+  
+
+    if (!open) {
+      return (
+
+        <div className={styledNav.mobNavBars} onClick={toggle}>
+    <FaBars />
+    </div>
+        )
+    }
+     return (
+
+      <div className={styledNav.mobNavBars} onClick={toggle}>
+        <FaTimes />
+      </div>
+     )
+  }

@@ -5,9 +5,13 @@
     align-items: center;
     color: #000;  
 }
+
+
 .dashboardInnerWrapper{
     margin-top: 5rem;
 }
+
+
 .profileImageWrapper{
     min-width:130px; 
     min-height:130px;
@@ -15,6 +19,8 @@
     height:130px;
     margin-bottom: 1rem;
 }
+
+
 .profileImage{
     border-radius: 50%;
 }
@@ -73,22 +79,139 @@
     transition: all 0.3s ease-in-out;
     color: var(--white);
 }
+
+
 .DashboardSpacer{
-    
     margin: 2rem auto; 
 }
 
+
+
+.infoCardContainer{
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.infoCardContainer  span{
+    margin: 0rem 2rem ;
+    width: 100px;
+    height:3px;
+    background-color: var(--purple);
+}
+
+.infoCardTitle{
+    width: 80%;
+    font-family: var(--secondaryFont);
+    font-weight: 600;
+    font-size: 1.3rem;
+    padding-left: 15px;
+    margin: 0.5rem auto;
+
+}
+.infoCardInnerWrapper{
+    border: 0.8px solid var(--blue);
+    border-radius: 5px;
+    box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
+    padding:15px 5px;
+    /* width: 70vw; */
+    min-height:150px;
+}
+
+.infoCardEditIconWrapper{
+    display: flex;
+    justify-content: right;
+    padding-right: 5px;
+}
+.infoCardEditIcon{
+    color: var(--blue);
+}
+
+
+.infoCardContentWrapper{
+    display: flex;
+    width: 100%;
+    /* justify-content: space-around; */
+    margin: 1rem 0.5rem;
+}
+
+.infoCardContentTitle{
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-size: 1.3rem;
+    padding:0px 10px;
+    width: 100%;
+}
+
+
+.infoCardContentDate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    font-size: 1rem;
+    padding:0px 10px;
+    width: 100%;
+}
+
+.infoCardContentText{
+    border: none;
+    letter-spacing: 1.1px;
+    font-size: 1rem;
+    padding:0px 10px;
+}
+
+
+.PetImage{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    /* margin-bottom: 0.5rem; */
+}
+
+.infoCardContentListContainer{
+    place-content: center;
+    display: grid;
+    grid-template-columns: repeat(2,100px);
+    grid-gap: 1rem 3rem;
+}
+.infoCardContentListItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5rem 1rem;
+}
+
+
+.infoCardContentListFlexContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.infoCardContentFlexListItem{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3rem 0;
+
+}
+
+
+
+
+
+
 @media screen and (min-width:960px) {
-    .profileImageWrapper{
-        display: none;
-    }
+
     .ButtonContainer{
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
-        
-        
+
     }
     
     .ButtonCancel{
@@ -135,4 +258,23 @@
         transition: all 0.3s ease-in-out;
         color: var(--white);
     }
+
+    .infoCardInnerWrapper{
+
+        width: 60vh;
+    }
+    /* .infoCardContentListFlexContainer{
+        
+    } */
+
+    .infoCardTitle{
+        width: 80%;
+        font-family: var(--secondaryFont);
+        font-weight: 600;
+        font-size: 2rem;
+        padding-left: 15px;
+        margin: 0.5rem auto;
+    
+    }
+    
 }

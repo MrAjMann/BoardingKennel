@@ -1,0 +1,38 @@
+.authWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.authInfo{
+    color: var(--black);
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 14px;
+    letter-spacing: 2px; 
+}
+.authButton {
+    border: none;
+    display: flex;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
+    background: var(--purple);
+    color: var(--white);
+    letter-spacing: 2px;
+    font-size: 1.4rem;
+    width: 250px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    height: 50px;
+    cursor:pointer;
+    transition: all 1s ease-in-out;
+}
+
+.authButton:hover{
+    transition: all 1s ease-in-out;
+    border-radius: 15px;
+    background: var(--pink);
+}

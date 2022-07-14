@@ -1,8 +1,13 @@
 import styled from "./InfoCard.module.css";
 import { FiEdit } from "react-icons/fi";
 import { IoAddCircleOutline } from "react-icons/io5";
-import { type } from "os";
+import { trpc } from "../../../utils/trpc";
+
+
+
+
 export const InfoCard = ({ children, title }) => {
+  
   return (
     <div className={styled.infoCardContainer}>
       <h2 className={styled.infoCardTitle}>{title}</h2>
@@ -16,46 +21,44 @@ export const InfoCard = ({ children, title }) => {
   );
 };
 
+
+
+
+
 export const ICPersonalInfo = () => {
+  const {data, isLoading} = trpc.useQuery(["user.get-user"])
+  // console.log(data?.address);
+
+  
   return (
     <>
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
-        <input
-          disabled
-          value="04555615555"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>{data?.phone}</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Email:</h4>
 
-        <input
-          disabled
-          value="johno@email.com"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>{data?.email}</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
-        <textarea
-          disabled
-          value="123 Main St, StrangeTown, NSW, 3475"
-          className={styled.infoCardContentTextArea}
-        ></textarea>
+        <p className={styled.infoCardContentText}>
+          {`${data?.address?.streetNumber}, ${data?.address?.streetName}, ${data?.address?.suburb}, ${data?.address?.state}, ${data?.address?.postcode} `}
+        </p>
       </div>
     </>
   );
 };
 export const ICAbout = () => {
+  const {data, isLoading} = trpc.useQuery(["user.get-user"])
   return (
     <>
       <div className={styled.infoCardContentAboutText}>
-        <p contentEditable="true" className={styled.infoCardContentAboutText}>
-          lorem Hi, my name is John and I love my puppy. My dog runs really fast
-          and loves to play outside with the cats.
+        <p className={styled.infoCardContentAboutText}>
+          {data?.about}
         </p>
       </div>
     </>
@@ -68,29 +71,19 @@ export const ICEmergencyContact = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Name:</h4>
 
-        <input
-          disabled
-          value="Penelope Franks"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Penelope Franks</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
-        <input
-          disabled
-          value="04333615333"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>04333615333</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
-        <textarea
-          disabled
-          value="123 Main St, StrangeTown, NSW, 3475"
-          className={styled.infoCardContentTextArea}
-        ></textarea>
+        <p className={styled.infoCardContentText}>
+          123 Main St, StrangeTown, NSW, 3475
+        </p>
       </div>
     </>
   );
@@ -102,63 +95,35 @@ export const ICPetInformation = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Name:</h4>
 
-        <input
-          disabled
-          value="Sandy"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Sandy</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Age: </h4>
-        <input
-          disabled
-          value="3"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>3</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Species: </h4>
-        <input
-          disabled
-          value="Dog"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Dog</p>
       </div>
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Breed: </h4>
-        <input
-          disabled
-          value="Golden Retrevier"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Golden Retrevier</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Gender: </h4>
-        <input
-          disabled
-          value="Female"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Female</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Desexed: </h4>
-        <input
-          disabled
-          value="Yes"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Yes</p>
       </div>
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Upto Date Vacinations: </h4>
-        <input
-          disabled
-          value="Yes"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Yes</p>
       </div>
     </>
   );
@@ -170,29 +135,19 @@ export const ICVetContactInfo = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Name:</h4>
 
-        <input
-          disabled
-          value="Border Vets"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Border Vets</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
-        <input
-          disabled
-          value="0822253177"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>0822253177</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
-        <textarea
-          disabled
-          value="12 Something rd, borderPlace, NSW, 3476"
-          className={styled.infoCardContentTextArea}
-        ></textarea>
+        <p className={styled.infoCardContentText}>
+          12 Something rd, borderPlace, NSW, 3476
+        </p>
       </div>
     </>
   );
@@ -204,56 +159,34 @@ export const ICMedicationInformation = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Medication:</h4>
 
-        <input
-          disabled
-          value="Medication Name"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Medication Name</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Dose: </h4>
-        <input
-          disabled
-          value="1 Tablet"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>1 Tablet</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Frequency: </h4>
-        <input
-          disabled
-          value="Twice Daily"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>Twice Daily</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Start Date: </h4>
-        <input
-          disabled
-          value="17 June 2023"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>17 June 2023</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>End Date: </h4>
-        <input
-          disabled
-          value="25 June 2023"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>25 June 2023</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Other Info: </h4>
-        <textarea
-          disabled
-          value="Sandy likes her medication to be mixed in with her food."
-          className={styled.infoCardContentTextArea}
-        ></textarea>
+        <p className={styled.infoCardContentText}>
+          Sandy likes her medication to be mixed in with her food.
+        </p>
       </div>
 
       <div className={styled.Seperator}></div>
@@ -267,54 +200,6 @@ export const ICMedicationInformation = () => {
   );
 };
 
-export const ICPets = () => {
-  return (
-    <>
-      <div className={styled.infoCardContentWrapper}>
-        <h4 className={styled.infoCardContentTitle}>Who is Visiting:</h4>
-
-        <ul className={styled.infoCardContentListContainer}>
-          <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Pet1"
-              value="Sandy"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
-              Sandy
-            </label>
-            <br></br>
-          </li>
-          <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Pet1"
-              value="Sandy"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
-              Luci
-            </label>
-            <br></br>
-          </li>
-          <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Pet1"
-              value="Sandy"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Pet1">
-              Tinkerbell
-            </label>
-            <br></br>
-          </li>
-        </ul>
-      </div>
-    </>
-  );
-};
 
 
 
@@ -325,13 +210,8 @@ export const ICStartDate = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>StartDate:</h4>
 
-        <input
-          disabled
-          value="17 June 2023"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>17 June 2023</p>
       </div>
-
     </>
   );
 };
@@ -341,17 +221,11 @@ export const ICEndDate = () => {
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>StartDate:</h4>
 
-        <input
-          disabled
-          value="25 June 2023"
-          className={styled.infoCardContentInput}
-        ></input>
+        <p className={styled.infoCardContentText}>25 June 2023</p>
       </div>
-
     </>
   );
 };
-
 
 export const ICExtraServices = () => {
   return (
@@ -361,40 +235,13 @@ export const ICExtraServices = () => {
 
         <ul className={styled.infoCardContentListContainer}>
           <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Service1"
-              value="Nail Clip"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Service1">
-              Nail Clip
-            </label>
-            <br></br>
+            <p className={styled.infoCardContentText}>Nail Clip</p>
           </li>
           <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Service2"
-              value="Wash"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Service2">
-              Wash
-            </label>
-            <br></br>
+            <p className={styled.infoCardContentText}>Wash</p>
           </li>
           <li className={styled.infoCardContentListItem}>
-            <input
-              type="checkbox"
-              className={styled.infoCardContentCheckbox}
-              name="Service3"
-              value="Flea"
-            />
-            <label className={styled.infoCardContentLabel} htmlFor="Service3">
-              Flea Treatment
-            </label>
-            <br></br>
+            <p className={styled.infoCardContentText}>Flea Treatment</p>
           </li>
         </ul>
       </div>
