@@ -12,14 +12,16 @@ import "../styles/globals.css";
 
 
 
+
+const MyApp: AppType = ({
+  Component,
   
-  const MyApp: AppType = ({
-    Component,
-    
-    pageProps: { session, ...pageProps },
-  }) => {
-    return (
-      <SessionProvider session={session}>
+  pageProps: { session, ...pageProps },
+}) => {
+  {console.log('Session', session)}
+  return (
+    <SessionProvider session={session}>
+        
       <Layout >
         <Component {...pageProps} />
       </Layout>
@@ -41,20 +43,16 @@ const getBaseUrl = () => {
 
 
 
-const url = `${getBaseUrl()}/api/trpc`;
 
+const url = `${getBaseUrl()}/api/trpc`;
 export default withTRPC<AppRouter>({
   config({ctx}){
 
 
-    const links = [
-      loggerLink(),
-      httpBatchLink({
-        maxBatchSize: 10,
-        url,
-      })
-    ]
+
+ 
     return {
+      url,
       queryClientConfig: {
         defaultOptions: {
           queries: {
@@ -71,7 +69,7 @@ export default withTRPC<AppRouter>({
         }
         return {}
       },
-      links,
+      // links,
       transformer: superjson
     }
   },

@@ -2,31 +2,39 @@ import { useState } from "react";
 import styledLogin from "../styles/Login.module.css";
 import AuthButton from "../components/AuthComponents/Buttons/authButton";
 
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn, signOut  } from "next-auth/react";
 
 export default function Login() {
+  const [userEmail, setUserEmail] = useState("");
+	const [password, setPassword] = useState("");
 	const { data: session, status } = useSession({
 		required: false,
 		onUnauthenticated() {
       
       console.log("unauthenticated user")
       return(
-
-        <div>
+        <div style={{display:'flex', justifyContent:"center", alignItems: 'left', color:'red',height:'100vh'}}>
 				<p>Incorrect credentials try again</p>
 			</div>
           )
-      
-
 		},
-	});
+    
+	})
 
-	const [userEmail, setUserEmail] = useState("");
-	const [password, setPassword] = useState("");
+
+  if (status === "loading") {
+    console.log('loading');
+    return "Loading or not authenticated..."
+  }
+
 
 	console.log("user session firstname", session?.user.firstName);
-
+if (status === "unauthenticated") {
+  console.log('unauthenticated');
+}
 	if (status === "authenticated" && session) {
+    console.log('connect ');
+    
 		return (
 			<div className={styledLogin.loginContainer}>
 				<h1 className={styledLogin.loginTitle}>Sign Up</h1>
@@ -37,12 +45,7 @@ export default function Login() {
 				</form>
 			</div>
 		);
-	} else if (status === "loading") {
-    return (
-      <div style={{ display: "flex", justifyContent: "center" }}>
-			return <p style={{ fontSize: "32px", color: "000" }}>Loading....</p>
-		</div>
-      )
+	
 	} else {
 		return (
 			<div className={styledLogin.loginContainer}>
@@ -84,11 +87,13 @@ export default function Login() {
 
 					<button
 						onClick={() =>
+              
+              
 							signIn("credentials", {
 								redirect: true,
 								email: `${userEmail}`,
 								password: `${password}`,
-							}).then(console.log)
+							})
 						}
 					>
 						Login

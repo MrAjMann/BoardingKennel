@@ -1,5 +1,5 @@
-import DashboardCreateBookingInterface from "../../../components/DashboardComponents/DashboardCreateBookingInterface/DashboardCreateBookingInterface";
-import Sidebar from "../../../components/DashboardComponents/Sidebar/Sidebar";
+import DashboardCreateBookingInterface from "../../components/DashboardComponents/DashboardCreateBookingInterface/DashboardCreateBookingInterface";
+import Sidebar from "../../components/DashboardComponents/Sidebar/Sidebar";
 import styled from "../../styles/Dashboard.module.css"
 
 

@@ -31,11 +31,12 @@ export const authOptions: NextAuthOptions = {
 						password: credentials?.password,
 					},
 				});
-
-				console.log("user", user);
+				console.log('user',user);
+				
 				if (user) {
 					return user;
 				} else {
+                    
 					return null;
 				}
 			},
@@ -43,7 +44,7 @@ export const authOptions: NextAuthOptions = {
 	],
 	callbacks: {
 		async session({ session, token, user, ...rest }) {
-			console.log("in session callback,", { session, token, user, rest });
+			// console.log("in session callback,", { session, token, user, rest });
 
 			if (token) {
 				session.id = token.id;
@@ -52,7 +53,7 @@ export const authOptions: NextAuthOptions = {
 			return session;
 		},
 		async jwt({ token, user, account, ...rest }) {
-			console.log("in jwt user =", { token, user, account, rest });
+			// console.log("in jwt user =", { token, user, account, rest });
 			if (token.sub === user?.id) {
 				console.log("token = id");
 			}
@@ -75,6 +76,7 @@ export const authOptions: NextAuthOptions = {
 			" session is active  ";
 		},
 	},
+    debug: true,
 	pages: {
 		signIn: "/login",
 	},
