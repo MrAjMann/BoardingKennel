@@ -1,11 +1,34 @@
-import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import NextAuth, { type NextAuthOptions } from "next-auth";
 
+import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import CredentialsProvider from "next-auth/providers/credentials";
+
 import { prisma } from "../../../server/db/client";
 
 export const authOptions: NextAuthOptions = {
 	adapter: PrismaAdapter(prisma),
+	session: {
+		strategy: "jwt",
+	},
+
+	callbacks: {
+		async jwt({ token, user  }) {
+			if (user) {
+				token.id = user.id
+			}
+			return token
+		},
+		async session({ session, token }) {
+			// console.log("in session callback,", { session, token });
+			if (session) {
+				session.user.id = token.id;
+			}
+			// console.log("sessionID: ", session.user.id);
+			return session;
+		},
+
+		
+	},
 	providers: [
 		CredentialsProvider({
 			name: "Credentials",
@@ -22,67 +45,37 @@ export const authOptions: NextAuthOptions = {
 			},
 
 			async authorize(credentials, _req) {
-				// console.log('req', _req)
-				// console.log('cred', credentials)
-
-				const user = await prisma?.user?.findFirst({
+				// console.log('REQ', _req)
+				// console.log('CRED', credentials)
+				const user =  await prisma?.user?.findFirst({
 					where: {
-						email: credentials?.email,
+						email: credentials?.email ,
 						password: credentials?.password,
 					},
+					
 				});
-				console.log('user',user);
-				
-				if (user) {
-					return user;
+	
+				if (user != null) {
+					// console.log('AUTHORIZE USER HERE');
+					// console.log('User om authorize',user);
+					
+					return user
 				} else {
+					// console.log('AUTHORIZE USER NOT HERE');
                     
-					return null;
+					return null && 'Not authorised';
 				}
 			},
+			
 		}),
 	],
-	callbacks: {
-		async session({ session, token, user, ...rest }) {
-			// console.log("in session callback,", { session, token, user, rest });
 
-			if (token) {
-				session.id = token.id;
-			}
-			console.log("sessionID: ", session.id);
-			return session;
-		},
-		async jwt({ token, user, account, ...rest }) {
-			// console.log("in jwt user =", { token, user, account, rest });
-			if (token.sub === user?.id) {
-				console.log("token = id");
-			}
-			if (user) {
-				token.id = user.id;
-			}
-
-			return token;
-		},
-
-		async redirect() {
-			return "/";
-		},
-	},
-	events: {
-		async signIn(message) {
-			" on successful sign in ";
-		},
-		async session(message) {
-			" session is active  ";
-		},
-	},
-    debug: true,
+	
 	pages: {
 		signIn: "/login",
+		error: "/errorPage"
 	},
-	session: {
-		strategy: "jwt",
-	},
+
 
 	secret: process.env.NEXTAUTH_SECRET,
 };

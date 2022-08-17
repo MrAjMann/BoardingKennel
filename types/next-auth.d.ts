@@ -1,22 +1,25 @@
-import NextAuth, { DefaultSession } from "next-auth"
+import NextAuth, { DefaultSession, DefaultUser } from "next-auth"
 
 declare module "next-auth" {
   /**
    * Returned by `useSession`, `getSession` and received as a prop on the `SessionProvider` React Context
    */
-  interface Session {
-    // id: string,
-    
+
+ interface ModifiedDefaultUser extends Omit<DefaultUser, "name"> {
+  firstName: string;
+ }
+
+interface Session {
     user: {
-      /** The user's name */
       id: string,
       image: string,
       email: string,
       firstName: string,
       lastName: string,
       pets: [],
+    }
 
-    } & DefaultSession["user"]
+    
   }
 }
 

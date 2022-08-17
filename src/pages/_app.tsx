@@ -1,6 +1,7 @@
 import Layout from "../components/Layout";
-import {loggerLink} from '@trpc/client/links/loggerLink'
-import {httpBatchLink} from '@trpc/client/links/httpBatchLink'
+import { loggerLink } from '@trpc/client/links/loggerLink'
+import { httpBatchLink } from '@trpc/client/links/httpBatchLink'
+import { wsLink, createWSClient } from '@trpc/client/links/wsLink'
 import { AppRouter } from '../server/router/app.router'
 import { SessionProvider } from "next-auth/react";
 
@@ -12,18 +13,18 @@ import "../styles/globals.css";
 
 
 
-
 const MyApp: AppType = ({
   Component,
-  
   pageProps: { session, ...pageProps },
 }) => {
-  {console.log('Session', session)}
+
+  // console.log('session from _app', session);
+
   return (
     <SessionProvider session={session}>
-        
-      <Layout >
-        <Component {...pageProps} />
+
+      <Layout {...pageProps}>
+        <Component />
       </Layout>
     </SessionProvider>
   );
@@ -42,17 +43,36 @@ const getBaseUrl = () => {
 };
 
 
+// function getEndingLink() {
+//   if (typeof window === "undefined") {
+//     return httpBatchLink({
+//       url,
+//     });
+//   }
 
+//   const client = createWSClient({
+//     url: process.env.NEXT_PUBLIC_WS_URL || "ws://localhost:3011"
+//   })
+
+
+//   return wsLink({
+//     client,
+//   })
+// }
 
 const url = `${getBaseUrl()}/api/trpc`;
 export default withTRPC<AppRouter>({
-  config({ctx}){
+  config({ ctx }) {
+
+    const links = [
+      // getEndingLink(),
+      loggerLink(),
+      httpBatchLink,
+    ]
 
 
-
- 
     return {
-      url,
+
       queryClientConfig: {
         defaultOptions: {
           queries: {
@@ -62,15 +82,21 @@ export default withTRPC<AppRouter>({
       },
       headers() {
         if (ctx?.req) {
+          // console.log('app.tsx ctx.req',ctx.req);
+
+          // console.log(ctx);
           return {
+            
             ...ctx.req.headers,
             'x-ssr': '1',
           }
         }
         return {}
       },
-      // links,
-      transformer: superjson
+
+      transformer: superjson,
+      url,
+      links,
     }
   },
   ssr: false,

@@ -10,10 +10,9 @@ export default function AuthButton() {
     return (
       <div className={styledAuthButton.authWrapper}>
         
-        <p className={styledAuthButton.authInfo} >Signed in as {session?.user.name}</p> 
+        <p className={styledAuthButton.authInfo} >Signed in as {session?.user.firstName}</p> 
         <button
           className={styledAuthButton.authButton}
-          onClick={() => signOut()}
           type="submit"
           >
           Logout
@@ -24,8 +23,7 @@ export default function AuthButton() {
   return (
     <div className={styledAuthButton.authWrapper}>
       <p className={styledAuthButton.authInfo}>Not signed in</p>
-      <button className={styledAuthButton.authButton} onClick={() => signIn()}>Login</button>
-
+      <button className={styledAuthButton.authButton} type="submit">Login</button>
     </div>
   );
 }

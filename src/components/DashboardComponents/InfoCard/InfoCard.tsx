@@ -2,7 +2,7 @@ import styled from "./InfoCard.module.css";
 import { FiEdit } from "react-icons/fi";
 import { IoAddCircleOutline } from "react-icons/io5";
 import { trpc } from "../../../utils/trpc";
-
+import { useSession } from "next-auth/react";
 
 
 
@@ -27,11 +27,12 @@ export const InfoCard = ({ children, title }) => {
 
 export const ICPersonalInfo = () => {
   const {data, isLoading} = trpc.useQuery(["user.get-user"])
+  const {data: session,  status } = useSession()
   // console.log(data?.address);
 
-  
-  return (
-    <>
+  if (session) {
+    return (
+      <>
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
         <p className={styled.infoCardContentText}>{data?.phone}</p>
@@ -51,7 +52,32 @@ export const ICPersonalInfo = () => {
       </div>
     </>
   );
+}
+return (
+  <>
+  <div className={styled.infoCardContentWrapper}>
+    <h4 className={styled.infoCardContentTitle}>Phone: </h4>
+    <p className={styled.infoCardContentText}></p>
+  </div>
+
+  <div className={styled.infoCardContentWrapper}>
+    <h4 className={styled.infoCardContentTitle}>Email:</h4>
+
+    <p className={styled.infoCardContentText}></p>
+  </div>
+
+  <div className={styled.infoCardContentWrapper}>
+    <h4 className={styled.infoCardContentTitle}>Address: </h4>
+    <p className={styled.infoCardContentText}>
+      
+    </p>
+  </div>
+</>
+)
 };
+
+
+
 export const ICAbout = () => {
   const {data, isLoading} = trpc.useQuery(["user.get-user"])
   return (

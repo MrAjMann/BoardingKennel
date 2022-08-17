@@ -14,9 +14,9 @@ import { trpc } from "../utils/trpc";
 
 
 const Home: NextPage = () =>{
-  const {data, isLoading} = trpc.useQuery(['auth.getSession'])
+  // const {data, isLoading} = trpc.useQuery(['auth.getSession'])
 
-  console.log(data);
+  // console.log('data',data);
   
     return (
       <div>

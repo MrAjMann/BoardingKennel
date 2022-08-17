@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Map from "./assets/Map.png";
-import Image from "next/image";
+import Image from "next/future/image";
 // React Icons
 import { FaPhone, FaEnvelope } from "react-icons/fa";
 import styledFooter from "./Footer.module.css";
 
-const Footer = () => {
+export const Footer = () => {
   return (
     <section className={styledFooter.footerContainer}>
       <div className={styledFooter.innerWrapper}>
@@ -13,11 +13,12 @@ const Footer = () => {
         <div className={styledFooter.footerSection}>
           <h1 className={styledFooter.sectionTitle}>Contact Details</h1>
           <ul className={styledFooter.footerItems}>
+            
             <li className={styledFooter.footerLinks}>
-              <FaPhone /> <Link href="/">0466666666</Link>
+             <FaPhone />  <Link href='/services'>0466666666</Link>
             </li>
             <li className={styledFooter.footerLinks}>
-              <FaEnvelope /> <Link href="/">bordingkennel@gmail.com</Link>
+              <FaEnvelope /> <Link href='/services'>bordingkennel@gmail.com</Link>
             </li>
           </ul>
         </div>
@@ -44,14 +45,14 @@ const Footer = () => {
               <Link href="/">123 Main St, Mango Hill, QLD, 4509</Link>
             </li>
             <li className={styledFooter.footerLinks}>
-              <Link href="/">
+              <div>
                 <Image
                   src={Map}
                   alt="Map of location"
-                  layout="fixed"
                   width="260px"
-                />
-              </Link>
+                  />
+                  </div>
+              
             </li>
           </ul>
         </div>
@@ -77,4 +78,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+
