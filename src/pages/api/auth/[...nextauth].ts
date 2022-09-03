@@ -32,52 +32,77 @@ export const authOptions: NextAuthOptions = {
 	providers: [
 		CredentialsProvider({
 			name: "Credentials",
+			type: "credentials",
 			credentials: {
-				email: {
-					label: "email",
-					type: "email",
-					placeholder: "Enter Your name",
-				},
-				password: {
-					label: "password",
-					type: "password",
-				},
+				// email: {
+				// 	label: "email",
+				// 	type: "email",
+				// 	placeholder: "Enter Your name",
+				// },
+				// password: {
+				// 	label: "password",
+				// 	type: "password",
+				// },
 			},
 
-			async authorize(credentials, _req) {
-				// console.log('REQ', _req)
-				// console.log('CRED', credentials)
+			async authorize(credentials, req) { 
+				console.log("Credentials",credentials);
+				
+				const { email, password } = credentials as {
+					email: string;
+					password: string;
+				  };
+				
+				console.log('REQ', email)
+
 				const user =  await prisma?.user?.findFirst({
 					where: {
-						email: credentials?.email ,
-						password: credentials?.password,
+						email: email,
+						password:  password,
+						// email: credentials?.email || "john@test.com",
+						// password: credentials?.password || "testing",
 					},
 					
 				});
-	
-				if (user != null) {
+
+				console.log("USER", user);
+				
+				if (user?.email && user?.password) {
 					// console.log('AUTHORIZE USER HERE');
 					// console.log('User om authorize',user);
 					
 					return user
 				} else {
+					
 					// console.log('AUTHORIZE USER NOT HERE');
                     
-					return null && 'Not authorised';
+					return null ;
 				}
+				
+				
 			},
-			
 		}),
+		
 	],
-
-	
 	pages: {
-		signIn: "/login",
+		signIn: "/auth/login",
 		error: "/errorPage"
 	},
-
-
-	secret: process.env.NEXTAUTH_SECRET,
+	debug: true,
+	
+	
+	
+	secret: process.env.NEXT_PUBLIC_SECRET,
+	// The maximum age of the NextAuth.js issued JWT in seconds.
+	// Defaults to `session.maxAge`.
+	
+	// You can define your own encode/decode functions for signing and encryption
+	// if you want to override the default behavior.
+	// async encode({ secret, token, maxAge }) {},
+	// async decode({ secret, token }) {},
+	
 };
 
 export default NextAuth(authOptions);
+
+

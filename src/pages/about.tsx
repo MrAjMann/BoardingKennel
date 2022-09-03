@@ -6,6 +6,8 @@ import { trpc } from "../utils/trpc";
 const about = () => {
 const {data, isLoading} = trpc.useQuery(["user.get-user"])
 
+console.log(data);
+
 
 
   return (

@@ -27,13 +27,15 @@ export const InfoCard = ({ children, title }) => {
 
 export const ICPersonalInfo = () => {
   const {data, isLoading} = trpc.useQuery(["user.get-user"])
-  const {data: session,  status } = useSession()
-  // console.log(data?.address);
+  
+  const { data: session, status } = useSession()
+ 
+ 
 
   if (session) {
     return (
       <>
-      <div className={styled.infoCardContentWrapper}>
+      <div className={styled.infoCardContentWrapper}> 
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
         <p className={styled.infoCardContentText}>{data?.phone}</p>
       </div>
@@ -46,9 +48,9 @@ export const ICPersonalInfo = () => {
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
-        <p className={styled.infoCardContentText}>
+        {/* <p className={styled.infoCardContentText}>
           {`${data?.address?.streetNumber}, ${data?.address?.streetName}, ${data?.address?.suburb}, ${data?.address?.state}, ${data?.address?.postcode} `}
-        </p>
+        </p> */}
       </div>
     </>
   );

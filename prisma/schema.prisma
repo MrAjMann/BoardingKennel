@@ -53,6 +53,7 @@ model User {
 
   accounts Account[]
   sessions Session[]
+
   @@unique([id, email])
 }
 
@@ -78,7 +79,7 @@ model Pets {
 }
 
 model Address {
-  id           Int     @id @unique
+  id           String  @id @default(cuid())
   addressId    String? @unique
   unitNumber   String?
   streetNumber Int
@@ -87,7 +88,6 @@ model Address {
   state        String
   postcode     String
   User         User?
-
 
   @@unique([id, addressId])
 }

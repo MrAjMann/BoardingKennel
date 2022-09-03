@@ -20,13 +20,13 @@ const Nav = () => {
 export default Nav;
 
 
-const NavLoginButton = () => {
-  const { data: session, status } = useSession()
+const NavLoginButton = ({session}) => {
+  
   // console.log('sessionNav: ', session);
 
   if (!session) {
     return (
-      <li className={styledNav.menuItem}><Link href="/login">login</Link></li>
+      <li className={styledNav.menuItem}><Link href="/auth/login">login</Link></li>
     )
   }
   return (
@@ -43,6 +43,7 @@ const NavLoginButton = () => {
 
 
 const NavMobileNavBars = () => {
+  const { data: session, status } = useSession()
 
   const [open, setNavOpen] = useState<boolean>(false)
   const toggle = () => {
@@ -73,10 +74,10 @@ const NavMobileNavBars = () => {
       </div>
       <ul className={styledNav.mobileMenuItems}>
         <li className={styledNav.mobileMenuItem}><Link href='/services'>Services</Link></li>
-        <li className={styledNav.mobileMenuItem}><Link href='/services'>Bookings</Link></li>
-        <li className={styledNav.mobileMenuItem}><Link href='/services'>Contact Us</Link></li>
+        <li className={styledNav.mobileMenuItem}><Link href='/bookings'>Bookings</Link></li>
+        <li className={styledNav.mobileMenuItem}><Link href='/contact'>Contact Us</Link></li>
       </ul>
-      <NavLoginButton />
+      <NavLoginButton  session={session}/>
 
       <div className={styledNav.mobNavBars} onClick={toggle} >
         <FaTimes />
@@ -91,6 +92,7 @@ const NavMobileNavBars = () => {
 
 
 const NavDesktop = () => {
+  const { data: session, status } = useSession()
   return (
 
     <nav className={styledNav.desktopNav}>
@@ -99,9 +101,9 @@ const NavDesktop = () => {
       </div>
       <ul className={styledNav.menuItems}>
         <li className={styledNav.menuItem}><Link href='/services'>Services</Link></li>
-        <li className={styledNav.menuItem}><Link href='/services'>Bookings</Link></li>
-        <li className={styledNav.menuItem}><Link href='/services'>Contact Us</Link></li>
-        <NavLoginButton />
+        <li className={styledNav.menuItem}><Link href='/bookings'>Bookings</Link></li>
+        <li className={styledNav.menuItem}><Link href='/contact'>Contact Us</Link></li>
+        <NavLoginButton session={session} />
       </ul>
     </nav>
   )

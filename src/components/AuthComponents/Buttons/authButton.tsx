@@ -13,7 +13,9 @@ export default function AuthButton() {
         <p className={styledAuthButton.authInfo} >Signed in as {session?.user.firstName}</p> 
         <button
           className={styledAuthButton.authButton}
-          type="submit"
+          type="submit" 
+          value="Logout"
+          
           >
           Logout
         </button>
@@ -23,7 +25,7 @@ export default function AuthButton() {
   return (
     <div className={styledAuthButton.authWrapper}>
       <p className={styledAuthButton.authInfo}>Not signed in</p>
-      <button className={styledAuthButton.authButton} type="submit">Login</button>
+      <button className={styledAuthButton.authButton} type="submit" value="Login">Login</button>
     </div>
   );
 }
