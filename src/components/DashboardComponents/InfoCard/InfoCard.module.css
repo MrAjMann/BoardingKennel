@@ -1,75 +1,73 @@
 /* InfoCard */
 
-.infoCardContainer{
-    margin: 1rem auto;
+.infoCardContainer {
+	margin: 1rem auto;
 }
 
-.infoCardContainer  span{
-    margin: 0rem 2rem ;
-    width: 100px;
-    height:3px;
-    background-color: var(--purple);
+.infoCardContainer span {
+	margin: 0rem 2rem;
+	width: 100px;
+	height: 3px;
+	background-color: var(--brightPurple);
 }
 
-.infoCardTitle{
-    font-family: var(--secondaryFont);
-    font-weight: 600;
-    font-size: 1.4rem;
-    
-    padding-left: 15px;
-    margin: 0.5rem auto;
+.infoCardTitle {
+	font-family: var(--secondaryFont);
+	font-weight: 600;
+	font-size: 1.4rem;
 
+	padding-left: 15px;
+	margin: 0.5rem auto;
 }
-.infoCardInnerWrapper{
-    border: 0.8px solid var(--blue);
-    border-radius: 5px;
-    box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
-    padding:15px 5px;
-    width: 80vw;
-    
-    min-height:150px;
-}
+.infoCardInnerWrapper {
+	border: 0.8px solid var(--blue);
+	border-radius: 5px;
+	box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
+	padding: 15px 5px;
+	width: 80vw;
 
-.infoCardEditIconWrapper{
-    display: flex;
-    justify-content: right;
-    padding-right: 5px;
-}
-.infoCardEditIcon{
-    color: var(--blue);
+	min-height: 150px;
 }
 
-
-.infoCardContentWrapper{
-    display: flex;
-    /* width: 100%; */
-    /* justify-content: space-around; */
-    margin: 1rem 0.5rem;
+.infoCardEditIconWrapper {
+	display: flex;
+	justify-content: right;
+	padding-right: 5px;
+}
+.infoCardEditIcon {
+	color: var(--blue);
 }
 
-.infoCardContentTitle{
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    font-size: 1.3rem;
-    padding:0px 10px;
-    width: 30%;
-}
-.infoCardContentDate{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 600;
-    letter-spacing: 1.2px;
-    font-size: 1.3rem;
-    padding:0px 10px;
-    width: 30%;
+.infoCardContentWrapper {
+	display: flex;
+	/* width: 100%; */
+	/* justify-content: space-around; */
+	margin: 1rem 0.5rem;
 }
 
-.infoCardContentText{
-    border: none;
-    letter-spacing: 1.1px;
-    font-size: 1rem;
-    padding:0px 10px;
+.infoCardContentTitle {
+	font-weight: 600;
+	letter-spacing: 1.2px;
+	font-size: 1.3rem;
+	padding: 0px 10px;
+	width: 30%;
+}
+.infoCardContentDate {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: 600;
+	letter-spacing: 1.2px;
+	font-size: 1.3rem;
+	padding: 0px 10px;
+	width: 30%;
+}
+
+.infoCardContentText {
+	border: none;
+	letter-spacing: 1.1px;
+	font-size: 1rem;
+	padding: 0px 10px;
 }
 /* .infoCardContentTextArea{
     position: relative;
@@ -80,54 +78,49 @@
     min-height: 120px;
     resize: none;
 } */
-.infoCardContentAboutText{
-    position: relative;
-    border: none;
-    margin-top: 0.3rem;
-    letter-spacing: 1.1px;
-    line-height: 1.3rem;
-    font-size: 1rem;
-    padding:10px 10px;
-    min-height: 80px;
-    width: 100%;
-    
+.infoCardContentAboutText {
+	position: relative;
+	border: none;
+	margin-top: 0.3rem;
+	letter-spacing: 1.1px;
+	line-height: 1.3rem;
+	font-size: 1rem;
+	padding: 10px 10px;
+	min-height: 80px;
+	width: 100%;
 }
 
-
-.PetImage{
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-bottom: 0.5rem;
+.PetImage {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	margin-bottom: 0.5rem;
 }
 
-.infoCardContentListContainer{
-    display: grid;
-    grid-template-columns: repeat(2,100px);
-    grid-gap: 1rem 3rem;
+.infoCardContentListContainer {
+	display: grid;
+	grid-template-columns: repeat(2, 100px);
+	grid-gap: 1rem 3rem;
 }
-.infoCardContentListItem{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0.5rem 1rem;
+.infoCardContentListItem {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0.5rem 1rem;
 }
 
-
-.infoCardContentListFlexContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-
+.infoCardContentListFlexContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
 }
-.infoCardContentFlexListItem{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0.3rem 0;
-
+.infoCardContentFlexListItem {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0.3rem 0;
 }
 
 /* .infoCardContentCheckbox{
@@ -142,61 +135,57 @@
     font-family: var(--secondaryFont);
 } */
 
-.Seperator{
-margin: 1rem auto;
-width: 65%;
-height: 2px;
-background-color: var(--purple);
+.Seperator {
+	margin: 1rem auto;
+	width: 65%;
+	height: 2px;
+	background-color: var(--purple);
 }
 
-
-.ButtonContainer{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.ButtonContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-.ButtonWrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 1px 1px 1px rgba(65, 65, 65, 0.8) ;
-    border: 1px solid var(--blue) ;
-    margin-top: 1rem;
-    width: 50px;
-    height: 50px;
-    /* background-color: var(--blue); */
-    border-radius: 50%;
-    /* padding: 1px; */
+.ButtonWrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 1px 1px 1px rgba(65, 65, 65, 0.8);
+	border: 1px solid var(--blue);
+	margin-top: 1rem;
+	width: 50px;
+	height: 50px;
+	/* background-color: var(--blue); */
+	border-radius: 50%;
+	/* padding: 1px; */
 }
-.ButtonIcon{
-    width: 50px;
-    height: 50px;
-    color: var(--blue);
+.ButtonIcon {
+	width: 50px;
+	height: 50px;
+	color: var(--blue);
 }
-
 
 @media screen and (min-width: 960px) {
+	.infoCardInnerWrapper {
+		border: 0.8px solid var(--blue);
+		border-radius: 5px;
+		box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
+		padding: 15px 5px;
+		max-width: 800px;
 
-    .infoCardInnerWrapper{
-        border: 0.8px solid var(--blue);
-        border-radius: 5px;
-        box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
-        padding:15px 5px;
-        max-width: 800px;
-        
-        min-height:150px;
-    }
+		min-height: 150px;
+	}
 }
 @media screen and (max-width: 1200px) {
+	.infoCardInnerWrapper {
+		border: 0.8px solid var(--blue);
+		border-radius: 5px;
+		box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
+		padding: 15px 5px;
+		max-width: 580px;
 
-    .infoCardInnerWrapper{
-        border: 0.8px solid var(--blue);
-        border-radius: 5px;
-        box-shadow: 1px 1.5px 1px rgba(73, 73, 73, 0.4);
-        padding:15px 5px;
-        max-width: 580px;
-        
-        min-height:150px;
-    }
+		min-height: 150px;
+	}
 }

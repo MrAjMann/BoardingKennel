@@ -15,10 +15,10 @@ export const Footer = () => {
           <ul className={styledFooter.footerItems}>
             
             <li className={styledFooter.footerLinks}>
-             <FaPhone />  <Link href='/services'>0466666666</Link>
+             <FaPhone />  <Link href='/services'>0428634295</Link>
             </li>
             <li className={styledFooter.footerLinks}>
-              <FaEnvelope /> <Link href='/services'>bordingkennel@gmail.com</Link>
+              <FaEnvelope /> <Link href='/services'>anthony@amwebsolutions.com.au</Link>
             </li>
           </ul>
         </div>
@@ -71,7 +71,7 @@ export const Footer = () => {
       </div>
       <div className={styledFooter.sectionCreatedBy}>
         <h4 className={styledFooter.sectionCreatedTitle}>
-          Website created by: Anthony Mann, 2022
+          Website created by:  AM Web Solutions, 2022
         </h4>
       </div>
     </section>

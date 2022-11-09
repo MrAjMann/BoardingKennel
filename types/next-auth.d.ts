@@ -16,7 +16,8 @@ interface Session {
       email: string,
       firstName: string,
       lastName: string,
-      pets: [],
+      address: string ,
+      
     }
 
     

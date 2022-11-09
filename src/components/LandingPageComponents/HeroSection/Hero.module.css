@@ -1,153 +1,181 @@
-.container{
-    padding: 10px;
-    width: 100vw;
-    height: 100vh;
-    
+.container {
+	padding: 10px;
+	width: 100vw;
+	height: 100vh;
 }
 
-.innerWrapper{
-    display: flex;
-    flex-direction: column-reverse;
-    /* z-index: 1; */
-    height: 80vh;
-    width: 100%;
-    /* max-width: 1400px; */
-    margin-right: auto;
-    margin-left: auto;
-    padding: 0 24px;
-    justify-content: center;
-    border-bottom: 0px 10%;
+.innerWrapper {
+	display: flex;
+	flex-direction: column-reverse;
+	/* z-index: 1; */
+	height: 80vh;
+	width: 100%;
+	/* max-width: 1400px; */
+	margin-right: auto;
+	margin-left: auto;
+	padding: 0 24px;
+	justify-content: center;
+	border-bottom: 0px 10%;
 }
 
-.title{
-    margin-top: -3rem;
-    font-size: 2rem;
-    text-align: center;
-    color: var(--brightPurple);
+.title {
+	margin-top: -3rem;
+	font-size: 1.3rem;
+	text-align: center;
+	color: var(--brightPurple);
 }
-.rightSection{
-    margin-top: -4rem;
-    display: block;
-    margin-bottom:6rem;
-    width: 100%;
-    
+.rightSection {
+	/* margin-top: -4rem; */
+	display: block;
+	/* margin-bottom: 6rem; */
+	width: 100%;
 }
-.imgSection img{
-z-index: -9;
-width:100%;
-
-}
-
-.btnWrapper{
-    margin: 2rem 0;
-    z-index: 1;
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-}
-.btnWrapper button{
-    width: 250px;
-    height: 100%;
-    background: var(--pink);
-    color: var(--white);
-    border-radius: 20px;
-    border:none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+.imgSection img {
+	z-index: -9;
+	width: 100%;
+	height: 800px;
+	object-fit: cover;
+	/* aspect-ratio: 1/1; */
 }
 
-
+.btnWrapper {
+	margin: 2rem 0;
+	z-index: 1;
+	width: 100%;
+	height: 50px;
+	display: flex;
+	justify-content: center;
+}
+/* .btnWrapper button {
+	width: 250px;
+	height: 100%;
+	background: var(--pink);
+	color: var(--white);
+	border-radius: 20px;
+	border: none;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+}
 
 .btnWrapper button:hover {
-    transition: all 0.2s ease-in-out;
-    background: var(--brightPurple);
-}
+	transition: all 0.2s ease-in-out;
+	background: var(--brightPurple);
+} */
 
-@media screen and (min-width:768px) {
-    .container{
-        /* overflow-y: hidden; */
-        /* margin-top: 3rem; */
-        padding: 10px;
-        width: 100%;
-        max-height: 90vh;
-        display: flex;
-        /* justify-content: center; */
-        /* align-items: center; */
-    }
-    .innerWrapper{
-        display: flex;
-        /* justify-content: center; */
-        /* align-items: center; */
-        /* height: 960px; */
-        flex-direction: row;
-        
-        /* z-index: 1; */
-        width: 100%;
-        max-width: 1600px;
-        margin-right: auto;
-        margin-left: auto;
-        padding: 0 24px;
-        
-        border-bottom: 0px 10%;
-    }
-    .leftSection{
-        display: flex;
-        height: 100%;
-        flex-direction: column;
-        /* align-items: left; */
-        /* text-align: left; */
-        justify-content: center;
-        width: 50%;
-        
-    }
+@media screen and (min-width: 768px) {
+	.container {
+		/* overflow-y: hidden; */
+		/* margin-top: 3rem; */
+		padding: 10px;
+		width: 100%;
+		/* max-height: 90vh; */
+		display: flex;
+		/* justify-content: center; */
+		/* align-items: center; */
+	}
+	.innerWrapper {
+		display: flex;
+		/* justify-content: center; */
+		/* align-items: center; */
+		/* height: 960px; */
+		flex-direction: row;
 
-    .title{
-        margin-top: 6rem;
-        font-size: 4rem;
-        text-align: left;
-        color: var(--brightPurple);
-    }
+		/* z-index: 1; */
+		width: 100%;
+		max-width: 1600px;
+		margin-right: auto;
+		margin-left: auto;
+		padding: 0 24px;
 
+		border-bottom: 0px 10%;
+	}
+	.leftSection {
+		display: flex;
+		height: 100%;
+		flex-direction: column;
+		/* align-items: left; */
+		/* text-align: left; */
+		justify-content: center;
+		width: 50%;
+	}
 
-    .btnWrapper{
-        margin-top: 5rem;
-        width: 100%;
-        height: 60px;
-        display: flex;
-        justify-content: left;
-    }
-    .btnWrapper button{
-        font-size: 1.5rem;
-        width: 350px;
-        height: 100%;
-        background: var(--pink);
-        color: var(--white);
-        border-radius: 20px;
-        border:none;
-        cursor: pointer;
-        transition: all 0.2s ease-in-out;
-    }
-    
-    
-    
-    .btnWrapper button:hover {
-        transition: all 0.2s ease-in-out;
-        background: var(--brightPurple);
-    }
+	.title {
+		font-family: "Sofia-Pro-Bold";
+		font-size: 48px;
+		text-align: left;
+		color: var(--black);
+	}
+	.subText {
+		margin-top: 3rem;
+		font-size: 18px;
+		width: 70%;
+		letter-spacing: 1px;
+		font-family: "Sofia-Pro-Light";
+		text-align: left;
+	}
+	.btnWrapper {
+		display: block;
+		/* width: 55%; */
+		/* justify-content: space-evenly; */
+	}
+	/* .btnWrapper button {
+		font-size: 1.5rem;
+		width: 350px;
+		height: 100%;
+		background: var(--pink);
+		color: var(--white);
+		border: none;
+		cursor: pointer;
+		transition: all 0.2s ease-in-out;
+	} */
+	.btnWrapper .primaryButton {
+		margin: 0 0.5rem;
+		border: none;
+		border-radius: 5px;
+		color: var(--white);
+		line-height: 1.25rem;
+		font-weight: 600;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 0.75rem 2rem;
+		background: var(--blue);
+	}
 
-    .rightSection{
-        display: block;
-        height: 100%;
-        width: 50%;
-    }
-    
-    .imgSection{
-        margin-top: -5rem;
-        
-        z-index: -999;
-        width: 100%;
-        height: 360px;
-    }
+	.btnWrapper .primaryButton:hover {
+		transition: all 0.2s ease-in-out;
+		background: var(--blueHover);
+	}
+	.btnWrapper .secondaryButton {
+		border: 1px solid var(--blue);
+		margin: 0 0.5rem;
+		border-radius: 5px;
+		color: var(--blueHover);
+		line-height: 1.25rem;
+		background-color: transparent;
+		font-size: 1rem;
+		cursor: pointer;
+		padding: 0.75rem 2.5rem;
+		transition: all 0.2s ease-out;
+		/* background: var(--white); */
+	}
 
+	.btnWrapper .secondaryButton:hover {
+		color: var(--white);
+		transition: all 0.2s ease-in;
+		background: var(--blue);
+	}
+
+	.rightSection {
+		display: block;
+		height: 100%;
+		width: 50%;
+	}
+
+	.imgSection {
+		margin-top: -5rem;
+
+		z-index: -999;
+		width: 100%;
+		height: 360px;
+	}
 }

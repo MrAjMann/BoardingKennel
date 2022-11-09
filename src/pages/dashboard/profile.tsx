@@ -1,6 +1,6 @@
 import DashboardProfileInterface from "../../components/DashboardComponents/DashboardProfileInterface/DashboardProfileInterface";
 import Sidebar from "../../components/DashboardComponents/Sidebar/Sidebar";
-import styled from "../../styles/Dashboard.module.css"
+import styled from  "../../styles/Dashboard.module.css"
 
 
 const profile = () => {

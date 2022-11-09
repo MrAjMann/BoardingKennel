@@ -7,4 +7,7 @@ const users = async (req: NextApiRequest, res: NextApiResponse) => {
   res.status(200).json(users);
 };
 
+// console.log("USERS", users);
 export default users;
+
+

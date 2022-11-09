@@ -1,28 +1,31 @@
 import z from 'zod'
 
 export const createUserSchema = z.object({
-    firstName: z.string(),
-    email: z.string().email(),
+  password: z.string(),
+  email: z.string().email(),
 })
 
-// export const createUserOutputSchema = z.object({
-//     firstName: z.string(),
-//     email: z.string().email(),
-// })
+export const createUserOutputSchema = z.object({
+  firstName: z.string(),
+  lastName: z.string(),
+  email: z.string().email(),
+})
 
 export type CreateUserInput = z.TypeOf<typeof createUserSchema>
 
-export const requestOtpSchema = z.object({
-    email: z.string().email(),
-    redirect: z.string().default('/'),
-  })
-  
+export const requestUP = z.object({
+  redirect: z.string().default('/dashboard/profile'),
+  email: z.string().email(),
+  password: z.string(),
 
-  export type requestOtpInput = z.TypeOf<typeof requestOtpSchema>
+})
 
-  
+
+export type requestUPInput = z.TypeOf<typeof requestUP>
+
+
 export const verifyOtpSchema = z.object({
-    hash: z.string(),
-  })
+  hash: z.string(),
+})
 
 

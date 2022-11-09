@@ -4,7 +4,14 @@ import { createRouter } from "./context";
 export const authRouter = createRouter()
   .query("getSession", {
     resolve({ ctx }) {
-      return ctx.session;
+      // console.log('ctx', ctx);
+      const userSession =  ctx.prisma.user.findFirst({
+        where: {
+          id: ctx.session?.user.id
+        }
+        
+      })
+      return userSession
     },
   })
   .middleware(async ({ ctx, next }) => {

@@ -1,4 +1,5 @@
 import Layout from "../components/Layout";
+import type { Session } from "next-auth";
 import { loggerLink } from '@trpc/client/links/loggerLink'
 import { httpBatchLink } from '@trpc/client/links/httpBatchLink'
 import { wsLink, createWSClient } from '@trpc/client/links/wsLink'
@@ -13,9 +14,9 @@ import "../styles/globals.css";
 
 
 
-const MyApp: AppType = ({
+const MyApp: AppType<{ session: Session | null }> = ({
   Component,
-  pageProps: { session, ...pageProps },
+  pageProps: {session, ...pageProps },
 }) => {
 
   // console.log('session from _app', session);

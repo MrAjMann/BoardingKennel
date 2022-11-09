@@ -26,31 +26,39 @@ export const InfoCard = ({ children, title }) => {
 
 
 export const ICPersonalInfo = () => {
-  const {data, isLoading} = trpc.useQuery(["user.get-user"])
-  
+  // const {data, isLoading} = trpc.useQuery(["user.get-user"])
+
   const { data: session, status } = useSession()
- 
+  const {data: userSession} = trpc.useQuery(['auth.getSession'])
+//  console.log('User Session', userSession);
  
 
   if (session) {
     return (
       <>
       <div className={styled.infoCardContentWrapper}> 
+        <h4 className={styled.infoCardContentTitle}>FirstName: </h4>
+        <p className={styled.infoCardContentText}>{userSession?.firstName}</p>
+      </div>
+      <div className={styled.infoCardContentWrapper}> 
         <h4 className={styled.infoCardContentTitle}>Phone: </h4>
-        <p className={styled.infoCardContentText}>{data?.phone}</p>
+        {/* <p className={styled.infoCardContentText}>{data?.phone}</p> */}
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Email:</h4>
 
-        <p className={styled.infoCardContentText}>{data?.email}</p>
+        {/* <p className={styled.infoCardContentText}>{data?.email}</p> */}
+        <p className={styled.infoCardContentText}>{session?.user.email}</p>
       </div>
 
       <div className={styled.infoCardContentWrapper}>
         <h4 className={styled.infoCardContentTitle}>Address: </h4>
-        {/* <p className={styled.infoCardContentText}>
-          {`${data?.address?.streetNumber}, ${data?.address?.streetName}, ${data?.address?.suburb}, ${data?.address?.state}, ${data?.address?.postcode} `}
-        </p> */}
+        <p className={styled.infoCardContentText}>
+          {/* {`${data?.address?.streetNumber}, ${data?.address?.streetName}, ${data?.address?.suburb}, ${data?.address?.state}, ${data?.address?.postcode} `} */}
+          {/* {`${} `} */}
+          
+        </p>
       </div>
     </>
   );
@@ -81,12 +89,17 @@ return (
 
 
 export const ICAbout = () => {
-  const {data, isLoading} = trpc.useQuery(["user.get-user"])
+  const {data, isLoading} = trpc.useQuery(["auth.getSession"])
+
+  const { data: session, status } = useSession()
+ 
+ console.log(data, session);
+    
   return (
     <>
       <div className={styled.infoCardContentAboutText}>
         <p className={styled.infoCardContentAboutText}>
-          {data?.about}
+          {/* {data?.user.firstName} */}
         </p>
       </div>
     </>

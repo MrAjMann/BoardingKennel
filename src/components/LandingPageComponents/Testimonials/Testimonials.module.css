@@ -1,56 +1,56 @@
-.testimonialsContainer{
-    margin-top: 3rem;
-    /* height: 800px; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.testimonialsContainer {
+	margin-top: 3rem;
+	/* height: 800px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
-.testimonialsWrapper{
-    /* margin: 1rem auto; */
-    margin-bottom: 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    grid-gap: 16px;
-    padding: 0 50px;
+.testimonialsWrapper {
+	/* margin: 1rem auto; */
+	margin-bottom: 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	align-items: center;
+	grid-gap: 16px;
+	padding: 0 50px;
 }
-.testimonialsTitle{
-    font-size: 3.5rem;
-    line-height: 1.1;
-    font-weight: 400;
-    font-family: "Slabo 13px", serif;
-    color: var(--purple);
-    letter-spacing: 2px;
-    margin-bottom: 2rem;
+.testimonialsTitle {
+	font-size: 3.5rem;
+	line-height: 1.1;
+	font-weight: 400;
+	font-family: "Slabo 13px", serif;
+	color: var(--brightPurple);
+	letter-spacing: 2px;
+	margin-bottom: 2rem;
 }
 
-@media screen and (min-width:768px) {
-    .testimonialsContainer{
-        margin-top: -3rem;
-        height: 800px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .testimonialsWrapper{
-        max-width: 1300px;
-        margin: 0 auto;
-        display: grid;
-        /* grid-template-columns: 1fr 1fr 1fr 1fr; */
-        grid-template-columns: 1fr 1fr;
-        align-items: center;
-        grid-gap: 16px;
-        padding: 0 50px;
-    }
-    .testimonialsTitle{
-        font-size: 3.5rem;
-        line-height: 1.1;
-        font-weight: 400;
-        font-family: "Slabo 13px", serif;
-        color: var(--purple);
-        letter-spacing: 2px;
-        margin-bottom: 64px;
-    }
+@media screen and (min-width: 768px) {
+	.testimonialsContainer {
+		margin-top: -3rem;
+		height: 800px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.testimonialsWrapper {
+		max-width: 1300px;
+		margin: 0 auto;
+		display: grid;
+		/* grid-template-columns: 1fr 1fr 1fr 1fr; */
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		grid-gap: 16px;
+		padding: 0 50px;
+	}
+	.testimonialsTitle {
+		font-size: 3.5rem;
+		line-height: 1.1;
+		font-weight: 400;
+		font-family: "Slabo 13px", serif;
+		color: var(--brightPurple);
+		letter-spacing: 2px;
+		margin-bottom: 64px;
+	}
 }

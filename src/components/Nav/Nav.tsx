@@ -20,9 +20,11 @@ const Nav = () => {
 export default Nav;
 
 
-const NavLoginButton = ({session}) => {
+const NavLoginButton = () => {
   
   // console.log('sessionNav: ', session);
+  const { data: session, status } = useSession()
+
 
   if (!session) {
     return (
@@ -32,7 +34,7 @@ const NavLoginButton = ({session}) => {
   return (
     <>
       {/* <div><p style={{color: 'blue'}}>{session?.user.firstName || undefined}</p></div> */}
-      <div><p>{session?.user.email}</p></div>
+      <div><p>{session.user?.email}</p></div>
 
       <li className={styledNav.menuItem}><Link href="/api/auth/signout">Logout </Link> </li>
     </>
@@ -54,7 +56,7 @@ const NavMobileNavBars = () => {
     return (
       <nav className={styledNav.mobileNav}>
         <div className={styledNav.logo}>
-          <Link href="/">Boarding Kennels</Link>{" "}
+          <Link href="/">KMS</Link>{" "}
         </div>
         <ul className={styledNav.mobileMenuItemsHidden}>
 
@@ -70,7 +72,7 @@ const NavMobileNavBars = () => {
 
     <nav className={styledNav.mobileNavOpen} >
       <div className={styledNav.logo}>
-        <Link href="/">Boarding Kennels</Link>{" "}
+        <Link href="/">KMS</Link>{" "}
       </div>
       <ul className={styledNav.mobileMenuItems}>
         <li className={styledNav.mobileMenuItem}><Link href='/services'>Services</Link></li>
@@ -93,11 +95,12 @@ const NavMobileNavBars = () => {
 
 const NavDesktop = () => {
   const { data: session, status } = useSession()
+
   return (
 
     <nav className={styledNav.desktopNav}>
       <div className={styledNav.logo}>
-        <Link href="/">Boarding Kennels</Link>{" "}
+        <Link href="/">KMS</Link>{" "}
       </div>
       <ul className={styledNav.menuItems}>
         <li className={styledNav.menuItem}><Link href='/services'>Services</Link></li>

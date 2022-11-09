@@ -1,41 +1,36 @@
 :root {
-  /* Fonts */
-  --primaryFont: 'Slabo 13px', serif;
-  --secondaryFont: 'Noto Sans', sans-serif;
+	/* Fonts */
+	--primaryFont: "Slabo 13px", serif;
+	--secondaryFont: "Noto Sans", sans-serif;
 
-  /* Colors */
-  --purple: #8E5AAA;
-  --pink: #FF6584;
-  --brightPurple: #814C9E;
-  --offWhite: #DADADA;
-  --black: #000;
-  --white: #fff;
-  --yellow: #FFD600;
-  --blue: #699BF7;
-  /* Font Sizes */
-  
-
+	/* Colors */
+	--purple: #000000;
+	--pink: #dd8bd3;
+	--brightPurple: #814c9e;
+	--offWhite: #dadada;
+	--black: #000;
+	--white: #fff;
+	--yellow: #ffd600;
+	--blue: #0071e8;
+	--blueHover: #0066d1;
+	/* Font Sizes */
 }
 
 html,
 body {
-
-  /* font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-  Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif; */
-  font-family: 'Slabo 13px', serif;
+	font-family: "Slabo 13px", serif;
 }
 
 a {
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 }
 li {
-  list-style: none;
-  
+	list-style: none;
 }
 
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
 }
